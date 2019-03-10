@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lazor_sound.wav-725b45eb534bf5f0d584343a9c4fa45b.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/Effects/lazor_sound.wav"
+dest_files=[ "res://.import/lazor_sound.wav-725b45eb534bf5f0d584343a9c4fa45b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

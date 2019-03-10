@@ -1,0 +1,442 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes_and_Scripts/MainMenu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Fonts/Menu/Menu_TitleFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes_and_Scripts/MainMenu/MenuButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/Tutorial0.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Tutorial1.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Tutorial2.png" type="Texture" id=6]
+
+[node name="MainMenu" type="Control" index="0"]
+
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Panel" type="ColorRect" parent="VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 150 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0.16632, 0.425781, 1 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Size Flags", "Theme", "Visibility", "custom_styles" ]
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/CenterContainer" index="0"]
+
+modulate = Color( 0, 0.886719, 0.803589, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 248.0
+margin_top = 15.0
+margin_right = 775.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.0968018, 0.111636, 0.476562, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "Lorem Ipsum"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 154.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+alignment = 0
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 338.0
+margin_bottom = 446.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.03125, 0.00927734, 0.00927734, 1 )
+_sections_unfolded = [ "Anchor", "Margin", "Size Flags" ]
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/ColorRect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 94.0
+margin_right = 235.0
+margin_bottom = 288.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "music sliders go here"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 342.0
+margin_right = 680.0
+margin_bottom = 446.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+color = Color( 0.53125, 0.157715, 0.157715, 1 )
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ColorRect2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Margin" ]
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 330.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Button_NewGame" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" index="1" instance=ExtResource( 3 )]
+
+margin_top = 34.0
+margin_right = 330.0
+margin_bottom = 114.0
+text = "New Game"
+_sections_unfolded = [ "Anchor", "Grow Direction", "Rect", "Size Flags", "custom_fonts" ]
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 118.0
+margin_right = 330.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Button_Continue" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" index="3" instance=ExtResource( 3 )]
+
+margin_top = 132.0
+margin_right = 330.0
+margin_bottom = 212.0
+text = "Continue"
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Mouse", "Rect", "Size Flags", "Visibility", "custom_fonts" ]
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 216.0
+margin_right = 330.0
+margin_bottom = 226.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Button_Intro" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" index="5" instance=ExtResource( 3 )]
+
+margin_top = 230.0
+margin_right = 330.0
+margin_bottom = 310.0
+text = "Intro"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 314.0
+margin_right = 330.0
+margin_bottom = 324.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Focus", "Rect" ]
+
+[node name="Button_Exit" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" index="7" instance=ExtResource( 3 )]
+
+margin_top = 328.0
+margin_right = 330.0
+margin_bottom = 408.0
+text = "Exit"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 412.0
+margin_right = 330.0
+margin_bottom = 442.0
+rect_min_size = Vector2( 0, 30 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 684.0
+margin_right = 1024.0
+margin_bottom = 446.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+color = Color( 0.18066, 0.178299, 0.480469, 1 )
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Tutorial0" type="TextureRect" parent="VBoxContainer/HBoxContainer/ColorRect3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="Tutorial1" type="TextureRect" parent="VBoxContainer/HBoxContainer/ColorRect3" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="Tutorial2" type="TextureRect" parent="VBoxContainer/HBoxContainer/ColorRect3" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="TextureRect2" type="TextureRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Mouse" ]
+
+[node name="TutorialTimeout" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 4.5
+one_shot = false
+autostart = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer/Button_NewGame" to="." method="_on_Button_NewGame_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer/Button_Continue" to="." method="_on_Button_Continue_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer/Button_Intro" to="." method="_on_Button_Intro_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer/Button_Exit" to="." method="_on_Button_Exit_pressed"]
+
+[connection signal="timeout" from="TutorialTimeout" to="." method="_on_TutorialTimeout_timeout"]
+
+

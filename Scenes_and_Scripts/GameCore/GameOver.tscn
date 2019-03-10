@@ -1,0 +1,187 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes_and_Scripts/GameCore/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Fonts/Game/Game_GameOverFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes_and_Scripts/GameCore/GameMenuButton.tscn" type="PackedScene" id=3]
+
+[node name="GameOver" type="Control"]
+
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.148438, 0.0533447, 0.0533447, 0.823216 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 13.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 120 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 124.0
+margin_right = 1024.0
+margin_bottom = 245.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "GAME OVER"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_fonts" ]
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 249.0
+margin_right = 1024.0
+margin_bottom = 329.0
+rect_min_size = Vector2( 0, 80 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Panel" type="Panel" parent="VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 162.0
+margin_top = 333.0
+margin_right = 862.0
+margin_bottom = 633.0
+rect_min_size = Vector2( 700, 300 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Rect", "Size Flags" ]
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 2
+_sections_unfolded = [ "Margin" ]
+
+[node name="Restart" parent="VBoxContainer/Panel/GridContainer" index="0" instance=ExtResource( 3 )]
+
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 328.0
+margin_bottom = 128.0
+text = "RESTART"
+
+[node name="MainMenu" parent="VBoxContainer/Panel/GridContainer" index="1" instance=ExtResource( 3 )]
+
+margin_left = 332.0
+margin_top = 0.0
+margin_right = 660.0
+margin_bottom = 128.0
+text = "MAIN MENU"
+
+[node name="Quit" parent="VBoxContainer/Panel/GridContainer" index="2" instance=ExtResource( 3 )]
+
+margin_left = 0.0
+margin_top = 132.0
+margin_right = 328.0
+margin_bottom = 260.0
+text = "QUIT GAME"
+
+[node name="OtherButton" parent="VBoxContainer/Panel/GridContainer" index="3" instance=ExtResource( 3 )]
+
+margin_left = 332.0
+margin_top = 132.0
+margin_right = 660.0
+margin_bottom = 260.0
+text = "CRY"
+
+[connection signal="pressed" from="VBoxContainer/Panel/GridContainer/Restart" to="." method="_on_Restart_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Panel/GridContainer/MainMenu" to="." method="_on_MainMenu_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Panel/GridContainer/Quit" to="." method="_on_Quit_pressed"]
+
+

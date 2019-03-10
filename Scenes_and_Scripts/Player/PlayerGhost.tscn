@@ -12,7 +12,7 @@ radius = 11.7526
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 75.6049
+radius = 49.3909
 
 [node name="PlayerGhost" type="RigidBody2D" index="0"]
 

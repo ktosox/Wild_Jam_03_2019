@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes_and_Scripts/GameCore/GameScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes_and_Scripts/Player/PlayerGhost.tscn" type="PackedScene" id=2]
 
-[node name="GameScene" type="Node"]
+[node name="GameScene" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -60,7 +60,6 @@ align = 1
 [node name="PlayerGhost" parent="." index="2" instance=ExtResource( 2 )]
 
 position = Vector2( 312.511, 288.517 )
-scale = Vector2( 2.38055, 2.12156 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 

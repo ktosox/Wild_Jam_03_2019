@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes_and_Scripts/GameCore/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes_and_Scripts/GameCore/GameMenuButton.tscn" type="PackedScene" id=2]
 
-[node name="GameMenu" type="Control"]
+[node name="GameMenu" type="Control" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -112,7 +112,7 @@ margin_left = 0.0
 margin_top = 76.0
 margin_right = 168.0
 margin_bottom = 136.0
-text = "MOAR"
+text = "RESET"
 
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer" index="3"]
 
@@ -137,7 +137,7 @@ margin_left = 0.0
 margin_top = 152.0
 margin_right = 168.0
 margin_bottom = 212.0
-text = "EXIT"
+text = "MENU"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Button_return" to="." method="_on_Button_return_pressed"]
 

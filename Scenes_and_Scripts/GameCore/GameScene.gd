@@ -30,8 +30,8 @@ func spawnPlayer():
 	
 
 func progressGame():
-	CurrentLevel.level += 1
-	print("game level is: ", CurrentLevel.level)
+	Save.currentLevel += 1
+	print("game level is: ", Save.currentLevel)
 	pass
 
 func openGameMenu():

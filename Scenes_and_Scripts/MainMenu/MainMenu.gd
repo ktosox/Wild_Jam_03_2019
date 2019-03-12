@@ -8,7 +8,8 @@ var tutorailState = 0
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	if (CurrentLevel.level == 0):
+	print("current level is: ", Save.Level)
+	if (Save.Level == 0):
 		$VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.modulate = Color(0.2,0.2,0.2)
 		$VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.mouse_filter = Control.MOUSE_FILTER_IGNORE
 #func _process(delta):
@@ -25,7 +26,7 @@ func _on_Button_Exit_pressed():
 
 
 func _on_Button_NewGame_pressed():
-	CurrentLevel.level = 0
+	Save.Level = 0
 	get_tree().change_scene("res://Scenes_and_Scripts/GameCore/GameScene.tscn")
 
 
@@ -34,12 +35,6 @@ func _on_Button_Intro_pressed():
 
 
 func _on_Button_Continue_pressed():
-	if(CurrentLevel.level < 10):
-		CurrentLevel.level = 0
-	elif(CurrentLevel.level < 20):
-		CurrentLevel.level = 10
-	else:
-		CurrentLevel.level = 20
 	get_tree().change_scene("res://Scenes_and_Scripts/GameCore/GameScene.tscn")
 
 
@@ -61,3 +56,21 @@ func _on_TutorialTimeout_timeout():
 			tutorailState = 0
 			pass
 	pass # replace with function body
+
+
+
+
+func _on_VolumeMasterSlider_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master") ,value)
+
+
+func _on_VolumeMusicSlider_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music") ,value)
+
+
+func _on_VolumeAmbientSlider_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Effects") ,value)
+
+
+func _on_VolumeEffectsSlider_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Ambient") ,value)

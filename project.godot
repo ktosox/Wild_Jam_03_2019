@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-CurrentLevel="*res://CurrentLevel.tscn"
+Save="*res://Save.tscn"
 
 [rendering]
 

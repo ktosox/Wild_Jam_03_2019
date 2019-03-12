@@ -6,7 +6,8 @@ func _on_Button_return_pressed():
 
 
 func _on_Button_moar_pressed():
-	print("MOAR MOAR MOARMOAR MOAR MOAR MOAR")
+	get_tree().paused = false
+	get_tree().change_scene("res://Scenes_and_Scripts/GameCore/GameScene.tscn")
 
 
 func _on_Button_exit_pressed():

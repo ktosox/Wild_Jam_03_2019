@@ -3,7 +3,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 50, 50 )
 
 [node name="Block" type="StaticBody2D"]
 
@@ -14,18 +14,18 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="Placeholder" type="Polygon2D" parent="." index="1"]
 
-polygon = PoolVector2Array( -20, -20, -20, 20, 20, 20, 20, -20 )
+polygon = PoolVector2Array( -50, -50, -50, 50, 50, 50, 50, -50 )
 uv = PoolVector2Array(  )
-color = Color( 0.210938, 0.210938, 0.210938, 1 )
+color = Color( 1, 1, 1, 1 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
 antialiased = false
@@ -35,5 +35,6 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
+_sections_unfolded = [ "Transform" ]
 
 

@@ -1,0 +1,13 @@
+player is controling a ghost via mouse
+ghost needs to get to the exit
+ the ghot can (haunt) parts of the environtment (bases)
+bases are visibly different from the walls / blocks
+
+
+proprotopns:
+16:9 screen - 1280 x 720
+bottom bar  - 1280 x 140
+game space  - 1280 x 580
+grid size - 64 x 29 - of 20 x 20 grids
+wall - 8 x 3
+block - 5 x 5 

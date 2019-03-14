@@ -5,6 +5,7 @@ extends Node
 #does not do gameplay stuff
 var currentLevel
 
+
 func _ready():
 	loadLevel()
 	# Called when the node is added to the scene for the first time.

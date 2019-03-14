@@ -4,7 +4,7 @@ extends RigidBody2D
 # var a = 2
 # var b = "textvar"
 var followMouse = false
-var slowDownRate = 7000
+var slowDownRate = 1
 var followSpeed = 50
 
 func _ready():
@@ -24,7 +24,8 @@ func _process(delta):
 		var direction = (get_global_mouse_position() - position)
 		linear_velocity =  direction * (followSpeed * delta)
 	else:
-		linear_velocity = linear_velocity * ( (slowDownRate * delta) / (1 + (slowDownRate * delta)) )
+		pass
+		linear_velocity = Vector2()
 		#apply_impulse(Vector2(),direction*delta)
 	pass
 

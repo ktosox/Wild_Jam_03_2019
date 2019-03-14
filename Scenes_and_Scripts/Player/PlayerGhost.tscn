@@ -14,8 +14,9 @@ radius = 22.0267
 custom_solver_bias = 0.0
 radius = 49.3909
 
-[node name="PlayerGhost" type="RigidBody2D"]
+[node name="PlayerGhost" type="RigidBody2D" index="0"]
 
+position = Vector2( 80, 290 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1

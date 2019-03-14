@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes_and_Scripts/GameCore/GameScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes_and_Scripts/Bases/GenericBase.tscn" type="PackedScene" id=2]
@@ -6,11 +6,10 @@
 [ext_resource path="res://Scenes_and_Scripts/Environment/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes_and_Scripts/Environment/SpawnPlatform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes_and_Scripts/Environment/ExitPortal.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes_and_Scripts/Player/PlayerGhost.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes_and_Scripts/GameCore/ScreenEdge.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes_and_Scripts/Interface/Overlay.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes_and_Scripts/GameCore/ScreenEdge.tscn" type="PackedScene" id=9]
 
-[node name="GameScene" type="Node"]
+[node name="GameScene" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -70,30 +69,48 @@ position = Vector2( 589.372, 316.543 )
 
 [node name="Block" parent="." index="3" instance=ExtResource( 3 )]
 
-position = Vector2( 1070, 170 )
+position = Vector2( 697.38, 140.463 )
 
 [node name="Wall" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 940, 190 )
+position = Vector2( 478.769, 305.876 )
+rotation = 1.5708
 
 [node name="SpawnPlatform" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 200, 290 )
-
 [node name="ExitPortal" parent="." index="6" instance=ExtResource( 6 )]
 
-position = Vector2( 200, 450 )
-
-[node name="PlayerGhost" parent="." index="7" instance=ExtResource( 7 )]
-
-position = Vector2( 410, 290 )
+[node name="ScreenEdge" parent="." index="7" instance=ExtResource( 7 )]
 
 [node name="Overlay" parent="." index="8" instance=ExtResource( 8 )]
 
-[node name="ScreenEdge" parent="." index="9" instance=ExtResource( 9 )]
+[node name="SpawnTimer" type="Timer" parent="." index="9"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="NextLevel" type="Timer" parent="." index="10"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="WinTimer" type="Timer" parent="." index="11"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = false
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+
+[connection signal="timeout" from="NextLevel" to="." method="_on_NextLevel_timeout"]
+
+[connection signal="timeout" from="WinTimer" to="." method="_on_WinTimer_timeout"]
 
 

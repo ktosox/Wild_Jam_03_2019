@@ -2,18 +2,15 @@ extends Node
 
 var gameMenu = load("res://Scenes_and_Scripts/GameCore/GameMenu.tscn")
 var gameOver = load("res://Scenes_and_Scripts/GameCore/GameOver.tscn")
-#var playerBase = load("res://Scenes_and_Scripts/Player/WildcatScene.tscn")
+var playerBase = load("res://Scenes_and_Scripts/Player/PlayerGhost.tscn")
 
-var playerLife = 5
-var playerShield = 10
-var playerLazor = 80
-var bumperShield = 100
-
-var currentPlayer = null
+var player
 
 func _ready():
 	get_tree().paused = false
 	spawnPlayer()
+	$GenericBase.setParent(self)
+
 
 func _input(event):
 	if(event.is_action("ui_cancel")):
@@ -22,16 +19,20 @@ func _input(event):
 #func _process(delta):
 #	pass
 
-func spawnPlayer():
+func hauntStarted(base):
+	base.hauYes()
 	pass
-	#if(currentPlayer == null):
-		#currentPlayer = playerBase.instance()
-		#add_child(currentPlayer)
-	
 
-func progressGame():
-	Save.currentLevel += 1
-	print("game level is: ", Save.currentLevel)
+func spawnPlayer():
+	player = playerBase.instance()
+	add_child(player)
+	
+func startPortal():
+	
+	pass
+
+func gameWon():
+	$WinTimer.start()
 	pass
 
 func openGameMenu():
@@ -45,23 +46,21 @@ func gameLost():
 	self.add_child(lostScreen, true)
 	get_tree().paused = true
 
-func _on_EdgeOfScreen_body_exited(body):
-	if(body.get_class() == "KinematicBody2D"):
-		print("player died")
-		gameLost()
-
-func _on_OutsideOfGame_body_exited(body):
-	if(body.get_class() == "RigidBody2D"):
-		body.destroy()
 
 func _on_Button_pressed():
 	openGameMenu()
-
-
-func _on_GameTimer_timeout():
-	progressGame()
-
+	
 
 func _on_Button2_pressed():
 	gameLost()
 
+
+
+func _on_WinTimer_timeout():
+	$NextLevel.start()
+	pass # replace with function body
+
+
+func _on_NextLevel_timeout():
+	openGameMenu()
+	pass # replace with function body

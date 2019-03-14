@@ -47,3 +47,8 @@ func hauYes():
 func hauNot():
 	$PossesionParticles.emitting = false
 	pass
+
+func _on_BaseArea_body_entered(body):
+	if(body == parentGameState.player):
+		parentGameState.hauntStarted(self)
+

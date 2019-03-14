@@ -7,7 +7,7 @@
 [ext_resource path="res://Resources/Tutorial1.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Tutorial2.png" type="Texture" id=6]
 
-[node name="MainMenu" type="Control" index="0"]
+[node name="MainMenu" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -542,7 +542,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -561,6 +560,7 @@ _sections_unfolded = [ "Size Flags" ]
 
 [node name="Tutorial0" type="TextureRect" parent="VBoxContainer/HBoxContainer/ColorRect3" index="0"]
 
+modulate = Color( 0, 0.199219, 0.0964966, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -578,11 +578,12 @@ size_flags_vertical = 1
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 0
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Margin", "Visibility" ]
 
 [node name="Tutorial1" type="TextureRect" parent="VBoxContainer/HBoxContainer/ColorRect3" index="1"]
 
 visible = false
+modulate = Color( 0.234375, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -600,11 +601,12 @@ size_flags_vertical = 1
 texture = ExtResource( 5 )
 expand = true
 stretch_mode = 0
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Margin", "Visibility" ]
 
 [node name="Tutorial2" type="TextureRect" parent="VBoxContainer/HBoxContainer/ColorRect3" index="2"]
 
 visible = false
+modulate = Color( 0, 0.0281982, 0.257812, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -622,7 +624,7 @@ size_flags_vertical = 1
 texture = ExtResource( 6 )
 expand = true
 stretch_mode = 0
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Margin", "Visibility" ]
 
 [node name="TextureRect2" type="TextureRect" parent="." index="2"]
 
@@ -630,6 +632,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -3.0
+margin_right = -3.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2

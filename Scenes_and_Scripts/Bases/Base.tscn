@@ -20,7 +20,7 @@ scale = Vector2( 3, 3 )
 emitting = false
 amount = 30
 lifetime = 1.4
-one_shot = true
+one_shot = false
 preprocess = 0.0
 speed_scale = 2.0
 explosiveness = 0.0
@@ -52,5 +52,7 @@ audio_bus_name = "Master"
 scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="BaseArea" to="." method="_on_BaseArea_body_entered"]
 
 

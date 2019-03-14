@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes_and_Scripts/Environment/ExitPortal.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Artwork/Portal/ship_bodyv2.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Artwork/Portal/Rainbow_Splash_zoom5.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 58.3183
 
 [sub_resource type="Animation" id=1]
 
@@ -25,9 +30,25 @@ tracks/0/keys = {
 
 [node name="ExitPortal" type="Node2D"]
 
+position = Vector2( 1200, 290 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Polygon2D" type="Polygon2D" parent="." index="0"]
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="1"]
 
 visible = false
 polygon = PoolVector2Array( -50, -50, -50, 50, 50, 50, 50, -50 )
@@ -43,7 +64,7 @@ texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
 
-[node name="ship_bodyv2" type="Sprite" parent="." index="1"]
+[node name="ship_bodyv2" type="Sprite" parent="." index="2"]
 
 rotation = 0.785398
 scale = Vector2( 0.177165, 0.177165 )
@@ -62,8 +83,11 @@ blend_times = [  ]
 
 [node name="Rainbow_Splash_zoom1" type="Sprite" parent="ship_bodyv2" index="1"]
 
+modulate = Color( 1, 1, 1, 0.464078 )
 rotation = 0.190409
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 

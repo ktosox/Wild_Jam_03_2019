@@ -2,8 +2,8 @@
 
 [sub_resource type="Gradient" id=1]
 
-offsets = PoolRealArray( 0, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.55251 )
+offsets = PoolRealArray( 0.12426, 0.171598, 0.863905, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.0326111, 1, 1, 1, 0.790818, 1, 1, 1, 0.55251 )
 
 [sub_resource type="GradientTexture" id=2]
 
@@ -16,7 +16,7 @@ width = 2048
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.788004, 0 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0.241262, 0 ), 0.0, 5.44934, 0, 0, Vector2( 0.960939, 0 ), -3.09098, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=4]
 
@@ -35,13 +35,13 @@ flag_disable_z = true
 spread = 180.0
 flatness = 0.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 50.0
+initial_velocity = 20.0
 initial_velocity_random = 0.0
 angular_velocity = 0.0
 angular_velocity_random = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-linear_accel = 0.0
+linear_accel = 30.0
 linear_accel_random = 0.0
 radial_accel = 0.0
 radial_accel_random = 0.0
@@ -51,7 +51,7 @@ damping = 0.0
 damping_random = 0.0
 angle = 180.0
 angle_random = 1.0
-scale = 0.6
+scale = 2.0
 scale_random = 0.0
 scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
@@ -62,5 +62,5 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread", "Tangential Accel", "Trail" ]
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread", "Tangential Accel", "Trail" ]
 

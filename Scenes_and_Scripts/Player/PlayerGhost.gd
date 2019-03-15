@@ -8,6 +8,7 @@ var slowDownRate = 1
 var followSpeed = 50
 
 func _ready():
+	$SpawnDelay.start()
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
@@ -29,3 +30,8 @@ func _process(delta):
 		#apply_impulse(Vector2(),direction*delta)
 	pass
 
+
+
+func _on_SpawnDelay_timeout():
+	$SpawnAnimation.restart()
+	pass # replace with function body

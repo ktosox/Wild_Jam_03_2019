@@ -91,18 +91,39 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="NextLevel" type="Timer" parent="." index="10"]
+[node name="DeSpawnTimer" type="Timer" parent="." index="10"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="WinTimer" type="Timer" parent="." index="11"]
+[node name="NextLevel" type="Timer" parent="." index="11"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="WinTimer" type="Timer" parent="." index="12"]
 
 process_mode = 1
 wait_time = 5.0
-one_shot = false
+one_shot = true
+autostart = false
+
+[node name="FadeInTimer" type="Timer" parent="." index="13"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = false
+
+[node name="FadeOutTimer" type="Timer" parent="." index="14"]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = true
 autostart = false
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
@@ -112,5 +133,9 @@ autostart = false
 [connection signal="timeout" from="NextLevel" to="." method="_on_NextLevel_timeout"]
 
 [connection signal="timeout" from="WinTimer" to="." method="_on_WinTimer_timeout"]
+
+[connection signal="timeout" from="FadeInTimer" to="." method="_on_FadeInTimer_timeout"]
+
+[connection signal="timeout" from="FadeOutTimer" to="." method="_on_FadeOutTimer_timeout"]
 
 

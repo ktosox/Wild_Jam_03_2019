@@ -8,7 +8,7 @@ var player
 
 func _ready():
 	get_tree().paused = false
-	spawnPlayer()
+	$FadeInTimer.start()
 	$GenericBase.setParent(self)
 
 
@@ -64,3 +64,15 @@ func _on_WinTimer_timeout():
 func _on_NextLevel_timeout():
 	openGameMenu()
 	pass # replace with function body
+
+
+func _on_FadeInTimer_timeout():
+	spawnPlayer()
+
+	#stuff after fade in ends
+	pass 
+
+
+func _on_FadeOutTimer_timeout():
+	#stuff after screen turns black
+	pass

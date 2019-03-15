@@ -23,11 +23,6 @@ autostart = false
 
 [node name="Overlay" parent="." index="2" instance=ExtResource( 2 )]
 
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 0.0
-margin_bottom = 0.0
-
 [connection signal="timeout" from="lostDelay" to="." method="_on_lostDelay_timeout"]
 
 [connection signal="timeout" from="wonDelay" to="." method="_on_wonDelay_timeout"]

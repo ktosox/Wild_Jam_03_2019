@@ -1,9 +1,6 @@
 extends RigidBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-var followMouse = false
+var followMouse = true
 var slowDownRate = 1
 var followSpeed = 50
 
@@ -11,32 +8,16 @@ func _ready():
 	$Trail.visible = false
 	$Trail2.visible = false
 	$SpawnDelay.start()
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
-
-func _input(event):
-	if(event.is_class("InputEventMouseButton") and event.is_pressed()):
-		if(event.button_index == 1): #follow on left mouse button click
-			followMouse = true
-		elif(event.button_index == 2): # stop following on right button click
-			followMouse = false
 
 func _process(delta):
 	if(followMouse):
 		var direction = (get_global_mouse_position() - position)
 		linear_velocity =  direction * (followSpeed * delta)
 	else:
-		pass
 		linear_velocity = Vector2()
-		#apply_impulse(Vector2(),direction*delta)
-	pass
-
-
 
 func _on_SpawnDelay_timeout():
 	$Trail.visible = true
 	$Trail2.visible = true
 	$SpawnAnimation.emitting = true
 	$SpawnAnimation.restart()
-	pass # replace with function body

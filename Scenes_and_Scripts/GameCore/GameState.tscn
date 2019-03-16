@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes_and_Scripts/GameCore/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes_and_Scripts/Interface/Overlay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes_and_Scripts/GameCore/GameLayerHolder.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes_and_Scripts/Player/PlayerGhost.tscn" type="PackedScene" id=4]
 
 [node name="GameState" type="Node"]
 script = ExtResource( 1 )
@@ -15,6 +17,10 @@ wait_time = 4.0
 one_shot = true
 
 [node name="Overlay" parent="." instance=ExtResource( 2 )]
+
+[node name="GameLayerHolder" parent="." instance=ExtResource( 3 )]
+
+[node name="PlayerGhost" parent="." instance=ExtResource( 4 )]
 
 [connection signal="timeout" from="lostDelay" to="." method="_on_lostDelay_timeout"]
 [connection signal="timeout" from="wonDelay" to="." method="_on_wonDelay_timeout"]

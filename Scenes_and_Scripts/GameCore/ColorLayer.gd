@@ -1,4 +1,4 @@
-extends Control
+extends TileMap
 
 # class member variables go here, for example:
 # var a = 2
@@ -15,4 +15,12 @@ func _ready():
 #	pass
 
 func setColor(color):
-	$CanvasModulate.color = color
+	modulate = color
+
+func activateLayer():
+	set_collision_layer_bit(0,false)
+	pass
+
+func deActivateLayer():
+	set_collision_layer_bit(0,true)
+	pass

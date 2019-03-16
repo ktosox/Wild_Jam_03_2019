@@ -6,53 +6,24 @@
 
 [sub_resource type="CircleShape2D" id=1]
 
-custom_solver_bias = 0.0
-radius = 10.0
-
 [node name="Base" type="Node2D"]
-
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
 
-[node name="PossesionParticles" type="Particles2D" parent="." index="0"]
-
+[node name="PossesionParticles" type="Particles2D" parent="."]
 scale = Vector2( 3, 3 )
 emitting = false
 amount = 30
 lifetime = 1.4
-one_shot = false
-preprocess = 0.0
 speed_scale = 2.0
-explosiveness = 0.0
 randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
 process_material = ExtResource( 2 )
 texture = ExtResource( 3 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="BaseArea" type="Area2D" parent="." index="1"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
+[node name="BaseArea" type="Area2D" parent="."]
 gravity = 0.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseArea" index="0"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseArea"]
 scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="BaseArea" to="." method="_on_BaseArea_body_entered"]
-
-

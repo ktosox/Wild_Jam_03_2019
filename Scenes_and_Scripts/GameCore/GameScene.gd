@@ -57,13 +57,9 @@ func _on_Button2_pressed():
 
 
 func _on_WinTimer_timeout():
-	$NextLevel.start()
+
 	pass # replace with function body
 
-
-func _on_NextLevel_timeout():
-	openGameMenu()
-	pass # replace with function body
 
 
 func _on_FadeInTimer_timeout():

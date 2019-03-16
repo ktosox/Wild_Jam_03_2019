@@ -1,145 +1,73 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes_and_Scripts/Player/PlayerGhost.gd" type="Script" id=1]
 [ext_resource path="res://Scenes_and_Scripts/Player/spawn_particles.tres" type="Material" id=2]
 [ext_resource path="res://Resources/Artwork/Effects/effect9.png" type="Texture" id=3]
-[ext_resource path="res://Scenes_and_Scripts/Player/Ghost_trail.tres" type="Material" id=4]
-[ext_resource path="res://Resources/Artwork/Effects/effect2.png" type="Texture" id=5]
+[ext_resource path="res://Scenes_and_Scripts/Player/Ghost_trail2.tres" type="Material" id=4]
+[ext_resource path="res://Resources/Artwork/Effects/effect6.png" type="Texture" id=5]
+[ext_resource path="res://Scenes_and_Scripts/Player/Ghost_trail.tres" type="Material" id=6]
+[ext_resource path="res://Resources/Artwork/Effects/effect2.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 22.0267
+radius = 38.1538
 
 [sub_resource type="CircleShape2D" id=2]
-
-custom_solver_bias = 0.0
 radius = 49.3909
 
 [node name="PlayerGhost" type="RigidBody2D"]
-
 position = Vector2( 80, 290 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
 gravity_scale = 0.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="SpawnAnimation" type="Particles2D" parent="." index="0"]
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
 
+[node name="SpawnAnimation" type="Particles2D" parent="."]
 emitting = false
 amount = 114
-lifetime = 1.6
+lifetime = 1.5
 one_shot = true
-preprocess = 0.0
-speed_scale = 2.3
+speed_scale = 2.0
 explosiveness = 1.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
 process_material = ExtResource( 2 )
 texture = ExtResource( 3 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="." index="1"]
-
-visible = false
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Trail" type="Particles2D" parent="." index="2"]
-
-modulate = Color( 1, 1, 1, 0.392274 )
+[node name="Trail2" type="Particles2D" parent="."]
 scale = Vector2( 1.3, 1.3 )
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 2.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
+amount = 50
+lifetime = 4.0
+speed_scale = 5.0
+local_coords = false
 process_material = ExtResource( 4 )
 texture = ExtResource( 5 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+[node name="Trail" type="Particles2D" parent="."]
+modulate = Color( 1, 1, 1, 0.392274 )
+scale = Vector2( 1.3, 1.3 )
+amount = 30
+lifetime = 2.0
+speed_scale = 2.0
+process_material = ExtResource( 6 )
+texture = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Tester_Placeholder" type="Polygon2D" parent="." index="3"]
+[node name="MouseTrackRange" type="Area2D" parent="."]
 
-position = Vector2( 0.306274, 0.0510406 )
-scale = Vector2( 1.2, 1.6 )
-polygon = PoolVector2Array( -0.222542, -3.9323, -2.64294, -3.76681, -4.3979, -1.61266, -3.89597, 0.771174, -2.54218, 2.67868, 0.201761, 3.0063, 2.33529, 2.26126, 4.0688, -1.26471, 2.23369, -3.25882 )
-uv = PoolVector2Array(  )
-color = Color( 1, 1, 1, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="MouseTrackRange" type="Area2D" parent="." index="4"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseTrackRange" index="0"]
-
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseTrackRange"]
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="SpawnDelay" type="Timer" parent="." index="5"]
-
-process_mode = 1
+[node name="SpawnDelay" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
-autostart = false
 
 [connection signal="timeout" from="SpawnDelay" to="." method="_on_SpawnDelay_timeout"]
-
-

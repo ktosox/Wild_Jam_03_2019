@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Rainbow_Splash_zoom3.png-369e11840f925a3910cdf89c19ba9237.stex"
+path="res://.import/white_space.png-77d24e74403b077e356eac012eaca54a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Artwork/Portal/Rainbow_Splash_zoom3.png"
-dest_files=[ "res://.import/Rainbow_Splash_zoom3.png-369e11840f925a3910cdf89c19ba9237.stex" ]
+source_file="res://Resources/Artwork/white_space.png"
+dest_files=[ "res://.import/white_space.png-77d24e74403b077e356eac012eaca54a.stex" ]
 
 [params]
 

@@ -8,6 +8,8 @@ var slowDownRate = 1
 var followSpeed = 50
 
 func _ready():
+	$Trail.visible = false
+	$Trail2.visible = false
 	$SpawnDelay.start()
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -33,5 +35,8 @@ func _process(delta):
 
 
 func _on_SpawnDelay_timeout():
+	$Trail.visible = true
+	$Trail2.visible = true
+	$SpawnAnimation.emitting = true
 	$SpawnAnimation.restart()
 	pass # replace with function body

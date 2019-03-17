@@ -11,3 +11,8 @@ game space  - 1280 x 580
 grid size - 64 x 29 - of 20 x 20 grids
 wall - 8 x 3
 block - 5 x 5 
+
+
+TO DO:
+- remove block and wall scenes
+- divide "game core" in to 2 seperate folders

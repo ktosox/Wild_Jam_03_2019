@@ -67,7 +67,7 @@ __meta__ = {
 }
 
 [node name="SpawnDelay" type="Timer" parent="."]
-wait_time = 0.6
+wait_time = 0.8
 one_shot = true
 
 [connection signal="timeout" from="SpawnDelay" to="." method="_on_SpawnDelay_timeout"]

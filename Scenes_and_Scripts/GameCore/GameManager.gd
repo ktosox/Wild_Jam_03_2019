@@ -7,7 +7,7 @@ var currentLevel
 
 
 func _ready():
-	loadLevel()
+	loadLevel(currentLevel)
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
@@ -17,7 +17,9 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-
+func loadLevel(newLevel):
+	pass
+	
 
 func resetLevel():
 	#

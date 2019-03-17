@@ -23,11 +23,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Panel" type="ColorRect" parent="VBoxContainer"]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 0, 150 )
-color = Color( 0, 0.16632, 0.425781, 1 )
+color = Color( 0.137255, 0, 0.698039, 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Panel"]
 anchor_right = 1.0
@@ -40,7 +39,7 @@ margin_top = 15.0
 margin_right = 903.0
 margin_bottom = 134.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.0968018, 0.111636, 0.476562, 1 )
+custom_colors/font_color = Color( 0.321569, 0.341176, 0.843137, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "Lorem Ipsum"
 align = 1

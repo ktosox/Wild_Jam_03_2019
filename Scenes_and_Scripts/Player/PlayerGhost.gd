@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var followMouse = true
+var followMouse = false
 var slowDownRate = 1
 var followSpeed = 50
 
@@ -19,5 +19,6 @@ func _process(delta):
 func _on_SpawnDelay_timeout():
 	$Trail.visible = true
 	$Trail2.visible = true
+	followMouse = true
 	$SpawnAnimation.emitting = true
 	$SpawnAnimation.restart()

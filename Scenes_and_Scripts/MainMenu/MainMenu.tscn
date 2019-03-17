@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes_and_Scripts/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Fonts/Menu/Menu_TitleFont.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Scenes_and_Scripts/MainMenu/MenuButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Resources/Tutorial0.png" type="Texture" id=4]
-[ext_resource path="res://Resources/Tutorial1.png" type="Texture" id=5]
-[ext_resource path="res://Resources/Tutorial2.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Artwork/Interface/main_menu_back.png" type="Texture" id=3]
+[ext_resource path="res://Scenes_and_Scripts/MainMenu/MenuButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Resources/Tutorial0.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Tutorial1.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Tutorial2.png" type="Texture" id=7]
 
 [node name="MainMenu" type="Control"]
 pause_mode = 2
@@ -53,7 +54,7 @@ size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
 editor/display_folded = true
-margin_right = 424.0
+margin_right = 404.0
 margin_bottom = 566.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -71,135 +72,138 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect/ContainerAudioSLiders"]
-margin_right = 424.0
+margin_right = 404.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 0, 15 )
 size_flags_vertical = 3
 
 [node name="VolumeMasterSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/ColorRect/ContainerAudioSLiders"]
 margin_top = 164.0
-margin_right = 424.0
+margin_right = 404.0
 margin_bottom = 180.0
 min_value = -15.0
 max_value = 15.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect/ContainerAudioSLiders"]
 margin_top = 184.0
-margin_right = 424.0
+margin_right = 404.0
 margin_bottom = 234.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="VolumeMusicSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/ColorRect/ContainerAudioSLiders"]
 margin_top = 238.0
-margin_right = 424.0
+margin_right = 404.0
 margin_bottom = 254.0
 min_value = -15.0
 max_value = 15.0
+ticks_on_borders = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect/ContainerAudioSLiders"]
 margin_top = 258.0
-margin_right = 424.0
+margin_right = 404.0
 margin_bottom = 308.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="VolumeAmbientSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/ColorRect/ContainerAudioSLiders"]
 margin_top = 312.0
-margin_right = 424.0
+margin_right = 404.0
 margin_bottom = 328.0
 min_value = -15.0
 max_value = 15.0
+ticks_on_borders = true
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect/ContainerAudioSLiders"]
 margin_top = 332.0
-margin_right = 424.0
+margin_right = 404.0
 margin_bottom = 382.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="VolumeEffectsSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/ColorRect/ContainerAudioSLiders"]
 margin_top = 386.0
-margin_right = 424.0
+margin_right = 404.0
 margin_bottom = 402.0
 min_value = -15.0
 max_value = 15.0
+ticks_on_borders = true
 
 [node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect/ContainerAudioSLiders"]
 margin_top = 406.0
-margin_right = 424.0
+margin_right = 404.0
 margin_bottom = 566.0
 rect_min_size = Vector2( 0, 15 )
 size_flags_vertical = 3
 
-[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
-margin_left = 428.0
-margin_right = 852.0
+[node name="ColorRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_left = 408.0
+margin_right = 872.0
 margin_bottom = 566.0
 size_flags_horizontal = 3
-color = Color( 0.53125, 0.157715, 0.157715, 1 )
+texture = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ColorRect2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = -4.0
+margin_left = 80.0
+margin_right = -80.0
+margin_bottom = -25.0
 alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 60.0
-margin_right = 416.0
-margin_bottom = 90.0
-rect_min_size = Vector2( 0, 30 )
+margin_top = 57.0
+margin_right = 304.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 15 )
 
-[node name="Button_NewGame" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 94.0
-margin_right = 416.0
-margin_bottom = 174.0
+[node name="Button_NewGame" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 76.0
+margin_right = 304.0
+margin_bottom = 156.0
 text = "New Game"
 
 [node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 178.0
-margin_right = 416.0
-margin_bottom = 188.0
+margin_top = 160.0
+margin_right = 304.0
+margin_bottom = 170.0
 rect_min_size = Vector2( 0, 10 )
 
-[node name="Button_Continue" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 192.0
-margin_right = 416.0
-margin_bottom = 272.0
+[node name="Button_Continue" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 174.0
+margin_right = 304.0
+margin_bottom = 254.0
 text = "Continue"
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 276.0
-margin_right = 416.0
-margin_bottom = 286.0
+margin_top = 258.0
+margin_right = 304.0
+margin_bottom = 268.0
 rect_min_size = Vector2( 0, 10 )
 
-[node name="Button_Intro" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 290.0
-margin_right = 416.0
-margin_bottom = 370.0
+[node name="Button_Intro" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 272.0
+margin_right = 304.0
+margin_bottom = 352.0
 text = "Intro"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 374.0
-margin_right = 416.0
-margin_bottom = 384.0
+margin_top = 356.0
+margin_right = 304.0
+margin_bottom = 366.0
 rect_min_size = Vector2( 0, 10 )
 
-[node name="Button_Exit" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 388.0
-margin_right = 416.0
-margin_bottom = 468.0
+[node name="Button_Exit" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 370.0
+margin_right = 304.0
+margin_bottom = 450.0
 text = "Exit"
 
 [node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 472.0
-margin_right = 416.0
-margin_bottom = 502.0
+margin_top = 454.0
+margin_right = 304.0
+margin_bottom = 484.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="ColorRect3" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
-margin_left = 856.0
+margin_left = 876.0
 margin_right = 1280.0
 margin_bottom = 566.0
 size_flags_horizontal = 3
@@ -213,7 +217,7 @@ margin_left = 4.0
 margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 expand = true
 
 [node name="Tutorial1" type="TextureRect" parent="VBoxContainer/HBoxContainer/ColorRect3"]
@@ -225,7 +229,7 @@ margin_left = 4.0
 margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 expand = true
 
 [node name="Tutorial2" type="TextureRect" parent="VBoxContainer/HBoxContainer/ColorRect3"]
@@ -237,17 +241,8 @@ margin_left = 4.0
 margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 expand = true
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -3.0
-margin_right = -3.0
-mouse_filter = 2
-expand = true
-stretch_mode = 5
 
 [node name="TutorialTimeout" type="Timer" parent="."]
 wait_time = 4.5

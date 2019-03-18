@@ -49,7 +49,6 @@ align = 1
 valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_top = 154.0
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -137,6 +136,7 @@ rect_min_size = Vector2( 0, 15 )
 size_flags_vertical = 3
 
 [node name="ColorRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+editor/display_folded = true
 margin_left = 408.0
 margin_right = 872.0
 margin_bottom = 566.0

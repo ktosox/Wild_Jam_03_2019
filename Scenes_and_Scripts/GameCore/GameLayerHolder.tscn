@@ -10,7 +10,7 @@ script = ExtResource( 1 )
 tile_data = PoolIntArray( 720902, 0, 0 )
 
 [node name="LayerGreen" parent="." instance=ExtResource( 2 )]
-tile_data = PoolIntArray( 655401, 1, 0, 1835035, 1, 0 )
+tile_data = PoolIntArray( 655409, 0, 0, 1310738, 1, 0, 1900553, 1, 0, 1900571, 1, 0 )
 
 [node name="LayerBlue" parent="." instance=ExtResource( 2 )]
 tile_data = PoolIntArray( 589847, 0, 0, 1245215, 0, 0, 1769522, 0, 0 )

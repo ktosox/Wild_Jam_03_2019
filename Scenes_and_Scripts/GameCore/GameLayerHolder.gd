@@ -18,16 +18,19 @@ func _ready():
 func setActiveLayer(color):
 	match color:
 		"red" :
+			$Background.color = Color(1,0,0)
 			$LayerBlue.deActivateLayer()
 			$LayerGreen.deActivateLayer()
 			$LayerRed.activateLayer()
 			pass
 		"green" :
+			$Background.color = Color(0,1,0)
 			$LayerBlue.deActivateLayer()
 			$LayerRed.deActivateLayer()
 			$LayerGreen.activateLayer()
 			pass
 		"blue" :
+			$Background.color = Color(0,0,1)
 			$LayerRed.deActivateLayer()
 			$LayerGreen.deActivateLayer()
 			$LayerBlue.activateLayer()

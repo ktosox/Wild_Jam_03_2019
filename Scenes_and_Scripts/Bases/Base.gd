@@ -50,5 +50,11 @@ func hauNot():
 
 func _on_BaseArea_body_entered(body):
 	if(body == parentGameState.player):
-		parentGameState.hauntStarted(self)
+		hauYes()
+		parentGameState.lockPlayer(global_position)
+		
 
+func _on_BaseArea_body_exited(body):
+	if(body == parentGameState.player):
+		hauNot()
+	pass # Replace with function body.

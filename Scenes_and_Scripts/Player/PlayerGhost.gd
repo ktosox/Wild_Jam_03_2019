@@ -1,20 +1,21 @@
 extends RigidBody2D
 
 var followMouse = false
-var slowDownRate = 1
+var lockSpeed = 30
 var followSpeed = 50
+var restLocation = Vector2(500,500)
 
 func _ready():
+	restLocation = position
 	$Trail.visible = false
 	$Trail2.visible = false
 	$SpawnDelay.start()
 
 func _process(delta):
 	if(followMouse):
-		var direction = (get_global_mouse_position() - position)
-		linear_velocity =  direction * (followSpeed * delta)
+		linear_velocity =  (get_global_mouse_position() - position) * (followSpeed * delta)
 	else:
-		linear_velocity = Vector2()
+		linear_velocity = (restLocation - position) / (lockSpeed * delta)
 
 func _on_SpawnDelay_timeout():
 	$Trail.visible = true

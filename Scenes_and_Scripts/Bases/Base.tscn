@@ -5,6 +5,7 @@
 [ext_resource path="res://Resources/Artwork/Effects/effect1.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 13.3333
 
 [node name="Base" type="Node2D"]
 script = ExtResource( 1 )
@@ -27,3 +28,4 @@ scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="BaseArea" to="." method="_on_BaseArea_body_entered"]
+[connection signal="body_exited" from="BaseArea" to="." method="_on_BaseArea_body_exited"]

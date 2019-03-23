@@ -9,6 +9,7 @@ var gameOver = load("res://Scenes_and_Scripts/GameCore/GameOver.tscn")
 var playerBase = load("res://Scenes_and_Scripts/Player/PlayerGhost.tscn")
 var levelLayout #to be set at start
 var player
+var currentBase
 
 
 var activeLayer 
@@ -20,6 +21,7 @@ var gameMode = 0 # 0 for mosue control / 1 for keyboard control
 
 func _ready():
 	get_tree().paused = false
+	$GenericBase.setParent(self)
 	$FadeInTimer.start()
 	$ExitPortal.parentGameState = self
 	setLayout()
@@ -33,30 +35,43 @@ func _process(delta):
 	pass
 
 
+func startPosses(callingBase):
+	currentBase = callingBase
+	switchGameMode()
+	lockPlayer(callingBase.global_position)
 
 
 func _input(event):
 	if(event.is_action("ui_cancel")):
 		openGameMenu()
-#	if(gameMode):
-#		#ghost mode stuff
-#		pass
-#	else:
-#		#base mode stuff
-#		pass
-#	#if(event.is_class("InputEventMouseButton") and event.is_pressed()):
-#	#	if(event.button_index == 1): #follow on left mouse button click
-#	#		followMouse = true
-#	#	elif(event.button_index == 2): # stop following on right button click
-#	#		followMouse = false
+		get_tree().set_input_as_handled()
+	if(gameMode==0):
+	#ghost mode stuff
+	
+		if(event.is_class("InputEventMouseButton") and event.is_pressed()):
+			if(event.button_index == 1): #follow on left mouse button click
+				player.followMouse = true
+			elif(event.button_index == 2): # stop following on right button click
+				player.followMouse = false
+	else:
+		if(event.is_class("InputEventKey") and event.is_pressed()):
+			currentBase.processInput(event)
+		pass
+		#base mode stuff
+
+
+
 
 func switchGameMode():
 	if(gameMode):
+		gameMode = 0
 		#switch to base mode
 		pass
 	else:
+		gameMode = 1
 		#switch to ghost mode
 		pass
+	print("gamemode: ",gameMode," is now active")
 	pass
 
 

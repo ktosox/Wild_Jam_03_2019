@@ -11,12 +11,6 @@ script = ExtResource( 1 )
 
 [node name="Base" parent="." instance=ExtResource( 2 )]
 
-[node name="placeholder" type="Polygon2D" parent="."]
-visible = false
-scale = Vector2( 1.1, 1.1 )
-color = Color( 0.585523, 0.714844, 0.49704, 1 )
-polygon = PoolVector2Array( -30, 0, -20, -20, 0, -30, 20, -20, 30, 0, 20, 20, 0, 30, -20, 20, -30, 0 )
-
 [node name="BaseSprite" type="Node2D" parent="."]
 scale = Vector2( 0.2, 0.2 )
 

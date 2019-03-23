@@ -7,13 +7,12 @@ extends Node
 var gameMenu = load("res://Scenes_and_Scripts/GameCore/GameMenu.tscn")
 var gameOver = load("res://Scenes_and_Scripts/GameCore/GameOver.tscn")
 var playerBase = load("res://Scenes_and_Scripts/Player/PlayerGhost.tscn")
+var levelLayout #to be set at start
 var player
 
 
-var myLevel # 
-var myManager
 var activeLayer 
-var layerHolder
+var myLevelLayout #this gamestates level layout - depends on level
 
 var gameMode = 0 # 0 for mosue control / 1 for keyboard control
 
@@ -22,15 +21,17 @@ var gameMode = 0 # 0 for mosue control / 1 for keyboard control
 func _ready():
 	get_tree().paused = false
 	$FadeInTimer.start()
-	$GenericBase.setParent(self)
 	$ExitPortal.parentGameState = self
-	layerHolder = $GameLayerHolder
+	setLayout()
+	myLevelLayout = levelLayout.instance()
+	add_child_below_node($ScreenEdge,myLevelLayout)
 	switchActiveLayer("red")
 	
 
 func _process(delta):
 
 	pass
+
 
 
 
@@ -59,8 +60,19 @@ func switchGameMode():
 	pass
 
 
+func setLayout():
+	match(Save.Level):
+		1:
+			levelLayout = preload("res://Levels/1/GameLayer.tscn")
+		2:
+			levelLayout = preload("res://Levels/2/GameLayer.tscn")
+		_:
+			print("the current level is ",Save.Level," so fuck you, LOL")
+			levelLayout = preload("res://Levels/1/GameLayer.tscn")
+
+
 func switchActiveLayer(newLayer):
-	layerHolder.setActiveLayer(newLayer)
+	myLevelLayout.setActiveLayer(newLayer)
 	pass
 
 func lockPlayer(lockPosition):
@@ -76,12 +88,9 @@ func spawnPlayer():
 	player = playerBase.instance()
 	add_child(player)
 	
-func startPortal():
-	
-	pass
 
 func gameWon():
-	$WinTimer.start()
+	#triggered on achiving victory condition
 	pass
 
 func openGameMenu():
@@ -96,20 +105,15 @@ func gameLost():
 	get_tree().paused = true
 
 
-func _on_wonDelay_timeout():
-	myManager.changeLevel()
-	pass
-
-
-func _on_lostDelay_timeout():
-	if (Save.lifes > 0):
-		myManager.resetLevel()
-	else:
-		myManager.gameOver()
-	myManager.rest
-	pass
-
 
 func _on_FadeInTimer_timeout():
+	#triggered once screen stops fading in, 
+	#stuff that starts after screen stops fading in goes here
 	spawnPlayer()
-	pass # Replace with function body.
+	pass
+
+
+func _on_FadeOutTimer_timeout():
+	#triggered once screen fades to black
+	#next level stuff goes here
+	pass 

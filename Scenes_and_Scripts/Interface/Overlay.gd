@@ -17,8 +17,8 @@ func _ready():
 func animateTransition (type):
 	# 0 - opens / 1 - closes
 	match type:
-		1:
+		0:
 			$TransitionNode.open()
-		2:
+		1:
 			$TransitionNode.close()
 	pass

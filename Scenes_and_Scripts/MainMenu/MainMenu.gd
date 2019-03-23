@@ -35,7 +35,7 @@ func _on_Button_Intro_pressed():
 
 
 func _on_Button_Continue_pressed():
-	get_tree().change_scene("res://Scenes_and_Scripts/GameCore/GameScene.tscn")
+	get_tree().change_scene("res://Scenes_and_Scripts/GameCore/GameState.tscn")
 
 
 func _on_TutorialTimeout_timeout():

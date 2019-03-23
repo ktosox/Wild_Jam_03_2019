@@ -12,11 +12,8 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="LayerRed" parent="." instance=ExtResource( 2 )]
-tile_data = PoolIntArray( 196618, 1, 0, 262180, 0, 0, 983083, -1610612735, 0 )
 
 [node name="LayerGreen" parent="." instance=ExtResource( 2 )]
-tile_data = PoolIntArray( 655409, 0, 0, 1310738, 1, 0, 1900553, 1, 0, 1900571, 1, 0 )
 
 [node name="LayerBlue" parent="." instance=ExtResource( 2 )]
-tile_data = PoolIntArray( 589847, 0, 0, 1245215, 0, 0, 1769522, 0, 0 )
 

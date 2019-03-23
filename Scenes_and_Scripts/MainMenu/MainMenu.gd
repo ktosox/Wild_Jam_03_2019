@@ -27,7 +27,7 @@ func _on_Button_Exit_pressed():
 
 func _on_Button_NewGame_pressed():
 	Save.Level = 0
-	get_tree().change_scene("res://Scenes_and_Scripts/GameCore/GameScene.tscn")
+	get_tree().change_scene("res://Scenes_and_Scripts/GameCore/GameState.tscn")
 
 
 func _on_Button_Intro_pressed():

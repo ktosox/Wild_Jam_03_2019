@@ -5,45 +5,24 @@
 [ext_resource path="res://Scenes_and_Scripts/GameCore/GameMenuButton.tscn" type="PackedScene" id=3]
 
 [node name="GameMenu" type="Control"]
-
 pause_mode = 2
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Focus", "Grow Direction", "Hint", "Mouse", "Pause", "Rect", "Size Flags", "Theme" ]
 
-[node name="ColorRect" type="ColorRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
 margin_top = -2.0
 margin_right = 1.0
 margin_bottom = -2.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.313726, 0.313726, 0.313726, 0.790039 )
-_sections_unfolded = [ "Margin", "Rect" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TextureRect" type="TextureRect" parent="." index="1"]
-
+[node name="TextureRect" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -52,18 +31,10 @@ margin_left = -251.5
 margin_top = -204.5
 margin_right = 251.5
 margin_bottom = 204.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
-stretch_mode = 0
 
-[node name="Panel" type="Panel" parent="." index="2"]
-
+[node name="Panel" type="Panel" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -72,88 +43,46 @@ margin_left = -90.0
 margin_top = -110.0
 margin_right = 90.0
 margin_bottom = 110.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin", "Material", "Rect", "Size Flags", "custom_styles" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 6.0
 margin_top = 4.0
 margin_right = -6.0
 margin_bottom = -4.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 alignment = 1
-_sections_unfolded = [ "Grow Direction", "Margin" ]
 
-[node name="Button_return" parent="Panel/VBoxContainer" index="0" instance=ExtResource( 3 )]
-
+[node name="Button_return" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
 margin_left = 0.0
 margin_top = 0.0
 margin_right = 168.0
 margin_bottom = 60.0
 text = "BACK"
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
 margin_top = 64.0
 margin_right = 168.0
 margin_bottom = 72.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
 size_flags_vertical = 3
-_sections_unfolded = [ "Size Flags" ]
 
-[node name="Button_moar" parent="Panel/VBoxContainer" index="2" instance=ExtResource( 3 )]
-
+[node name="Button_moar" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
 margin_left = 0.0
 margin_top = 76.0
 margin_right = 168.0
 margin_bottom = 136.0
 text = "RESET"
 
-[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
 margin_top = 140.0
 margin_right = 168.0
 margin_bottom = 148.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
 size_flags_vertical = 3
-_sections_unfolded = [ "Size Flags" ]
 
-[node name="Button_exit" parent="Panel/VBoxContainer" index="4" instance=ExtResource( 3 )]
-
+[node name="Button_exit" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
 margin_left = 0.0
 margin_top = 152.0
 margin_right = 168.0
@@ -161,9 +90,5 @@ margin_bottom = 212.0
 text = "MENU"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Button_return" to="." method="_on_Button_return_pressed"]
-
 [connection signal="pressed" from="Panel/VBoxContainer/Button_moar" to="." method="_on_Button_moar_pressed"]
-
 [connection signal="pressed" from="Panel/VBoxContainer/Button_exit" to="." method="_on_Button_exit_pressed"]
-
-

@@ -30,16 +30,8 @@ func _ready():
 	switchActiveLayer("red")
 	
 
-func _process(delta):
-
-	pass
-
-
-func startPosses(callingBase):
-	currentBase = callingBase
-	switchGameMode()
-	lockPlayer(callingBase.global_position)
-
+#func _process(delta):
+#	pass
 
 func _input(event):
 	if(event.is_action("ui_cancel")):
@@ -47,19 +39,15 @@ func _input(event):
 		get_tree().set_input_as_handled()
 	if(gameMode==0):
 	#ghost mode stuff
-	
 		if(event.is_class("InputEventMouseButton") and event.is_pressed()):
 			if(event.button_index == 1): #follow on left mouse button click
 				player.followMouse = true
 			elif(event.button_index == 2): # stop following on right button click
 				player.followMouse = false
 	else:
+	#base mode stuff
 		if(event.is_class("InputEventKey") and event.is_pressed()):
 			currentBase.processInput(event)
-		pass
-		#base mode stuff
-
-
 
 
 func switchGameMode():
@@ -72,18 +60,27 @@ func switchGameMode():
 		#switch to ghost mode
 		pass
 	print("gamemode: ",gameMode," is now active")
-	pass
 
+func startPosses(callingBase):
+	currentBase = callingBase
+	switchGameMode()
+	lockPlayer(callingBase.global_position)
+
+func stopPosses():
+	switchGameMode()
+	unlockPlayer()
 
 func setLayout():
 	match(Save.Level):
+		0:
+			levelLayout = preload("res://Levels/0/GameLayer.tscn")
 		1:
 			levelLayout = preload("res://Levels/1/GameLayer.tscn")
 		2:
 			levelLayout = preload("res://Levels/2/GameLayer.tscn")
 		_:
 			print("the current level is ",Save.Level," so fuck you, LOL")
-			levelLayout = preload("res://Levels/1/GameLayer.tscn")
+			levelLayout = preload("res://Levels/0/GameLayer.tscn")
 
 
 func switchActiveLayer(newLayer):
@@ -108,18 +105,16 @@ func gameWon():
 	#triggered on achiving victory condition
 	pass
 
-func openGameMenu():
-	var pauseMenu = gameMenu.instance()
-	self.add_child(pauseMenu, true)
-	get_tree().paused = true
-	pass
-
 func gameLost():
 	var lostScreen = gameOver.instance()
 	self.add_child(lostScreen, true)
 	get_tree().paused = true
 
-
+func openGameMenu():
+	var pauseMenu = gameMenu.instance()
+	self.add_child(pauseMenu, true)
+	get_tree().paused = true
+	pass
 
 func _on_FadeInTimer_timeout():
 	#triggered once screen stops fading in, 

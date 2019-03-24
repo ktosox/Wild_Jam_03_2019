@@ -8,9 +8,10 @@ var gameMenu = load("res://Scenes_and_Scripts/GameCore/GameMenu.tscn")
 var gameOver = load("res://Scenes_and_Scripts/GameCore/GameOver.tscn")
 var playerBase = load("res://Scenes_and_Scripts/Player/PlayerGhost.tscn")
 var levelLayout #to be set at start
-var player
-var currentBase
+var player # the player controlled ghost entity
+var currentBase # the current base accepting input and holding player
 
+var listOfBaseButtons = [81,87,69,82,65,83,68,70,90,88,67,86] #used to avoid errors while based is accepting input
 
 var activeLayer 
 var myLevelLayout #this gamestates level layout - depends on level
@@ -47,7 +48,10 @@ func _input(event):
 	else:
 	#base mode stuff
 		if(event.is_class("InputEventKey") and event.is_pressed()):
-			currentBase.processInput(event)
+			if(listOfBaseButtons.has(event.get_scancode())):
+				currentBase.processInput(event)
+			else:
+				print("button was wrong")
 
 
 func switchGameMode():
@@ -81,6 +85,13 @@ func setLayout():
 		_:
 			print("the current level is ",Save.Level," so fuck you, LOL")
 			levelLayout = preload("res://Levels/0/GameLayer.tscn")
+
+func processBaseOutput(command):
+	print ("command from base recieved: ", command)
+	if(command == 6):
+		stopPosses()
+	# called by base to process stuff caused by button press
+	pass
 
 
 func switchActiveLayer(newLayer):
@@ -121,7 +132,6 @@ func _on_FadeInTimer_timeout():
 	#stuff that starts after screen stops fading in goes here
 	spawnPlayer()
 	pass
-
 
 func _on_FadeOutTimer_timeout():
 	#triggered once screen fades to black

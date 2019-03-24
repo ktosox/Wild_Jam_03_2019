@@ -24,52 +24,7 @@ func assignButtons():
 		buttonMatrixMap[buttonMatrixList[i]] =  buttonMatrixRandom[i]
 
 func processInput(buttonPressed):
-	match buttonMatrixMap[buttonPressed.get_scancode()]:
-		0:
-			parentGameState.switchActiveLayer("green")
-			pass
-		1:
-			print(1)
-			parentGameState.switchActiveLayer("red")
-			pass
-		2:
-			parentGameState.switchActiveLayer("blue")
-			print(2)
-			pass
-		3:
-			print(3)
-			pass
-		4:
-			print(4)
-			pass
-		5:
-			print(5)
-			pass
-		6:
-			print(6)
-			pass
-		7:
-			print(7)
-			pass
-		8:
-			print(8)
-			pass
-		9:
-			print(9)
-			pass
-		10:
-			print(10)
-			pass
-		11:
-			print(11)
-			pass
-		_:
-			pass
-	pass
-
-
-
-
+	parentGameState.processBaseOutput(buttonMatrixMap[buttonPressed.get_scancode()])
 
 
 func hauYes():

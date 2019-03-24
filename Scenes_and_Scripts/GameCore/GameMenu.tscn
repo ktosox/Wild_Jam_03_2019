@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes_and_Scripts/GameCore/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Artwork/Interface/menu_backgroud.png" type="Texture" id=2]
-[ext_resource path="res://Scenes_and_Scripts/GameCore/GameMenuButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/Artwork/Interface/frame_04_04.png" type="Texture" id=3]
+[ext_resource path="res://Scenes_and_Scripts/GameCore/GameMenuButton.tscn" type="PackedScene" id=4]
 
 [node name="GameMenu" type="Control"]
 pause_mode = 2
@@ -27,68 +28,76 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -251.5
-margin_top = -204.5
-margin_right = 251.5
-margin_bottom = 204.5
+margin_left = -218.0
+margin_top = -235.0
+margin_right = 218.0
+margin_bottom = 205.0
+size_flags_horizontal = 8
 texture = ExtResource( 2 )
-expand = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -90.0
-margin_top = -110.0
-margin_right = 90.0
-margin_bottom = 110.0
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = 4.0
-margin_right = -6.0
-margin_bottom = -4.0
+margin_left = -82.0
+margin_top = -494.0
+margin_right = 83.0
+margin_bottom = -120.0
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/VBoxContainer"]
+margin_left = 22.0
+margin_right = 142.0
+margin_bottom = 139.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer"]
+margin_top = 143.0
+margin_right = 165.0
+margin_bottom = 163.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/VBoxContainer"]
+margin_top = 167.0
+margin_right = 165.0
+margin_bottom = 363.0
 alignment = 1
 
-[node name="Button_return" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
+[node name="Button_return" parent="TextureRect/VBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
 margin_left = 0.0
 margin_top = 0.0
-margin_right = 168.0
+margin_right = 165.0
 margin_bottom = 60.0
 text = "BACK"
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer/VBoxContainer"]
 margin_top = 64.0
-margin_right = 168.0
-margin_bottom = 72.0
+margin_right = 165.0
+margin_bottom = 64.0
 size_flags_vertical = 3
 
-[node name="Button_moar" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
+[node name="Button_moar" parent="TextureRect/VBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
 margin_left = 0.0
-margin_top = 76.0
-margin_right = 168.0
-margin_bottom = 136.0
+margin_top = 68.0
+margin_right = 165.0
+margin_bottom = 128.0
 text = "RESET"
 
-[node name="MarginContainer2" type="MarginContainer" parent="Panel/VBoxContainer"]
-margin_top = 140.0
-margin_right = 168.0
-margin_bottom = 148.0
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/VBoxContainer/VBoxContainer"]
+margin_top = 132.0
+margin_right = 165.0
+margin_bottom = 132.0
 size_flags_vertical = 3
 
-[node name="Button_exit" parent="Panel/VBoxContainer" instance=ExtResource( 3 )]
+[node name="Button_exit" parent="TextureRect/VBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
 margin_left = 0.0
-margin_top = 152.0
-margin_right = 168.0
-margin_bottom = 212.0
+margin_top = 136.0
+margin_right = 165.0
+margin_bottom = 196.0
 text = "MENU"
 
-[connection signal="pressed" from="Panel/VBoxContainer/Button_return" to="." method="_on_Button_return_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Button_moar" to="." method="_on_Button_moar_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Button_exit" to="." method="_on_Button_exit_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/VBoxContainer/Button_return" to="." method="_on_Button_return_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/VBoxContainer/Button_moar" to="." method="_on_Button_moar_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/VBoxContainer/Button_exit" to="." method="_on_Button_exit_pressed"]

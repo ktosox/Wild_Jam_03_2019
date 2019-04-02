@@ -37,25 +37,25 @@ func _on_Button_Intro_pressed():
 func _on_Button_Continue_pressed():
 	get_tree().change_scene("res://Scenes_and_Scripts/GameCore/GameState.tscn")
 
-
-func _on_TutorialTimeout_timeout():
-	match(tutorailState):
-		0:
-			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial0.visible = false
-			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial1.visible = true
-			tutorailState = 1
-			pass
-		1:
-			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial1.visible = false
-			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial2.visible = true
-			tutorailState = 2
-			pass
-		2:
-			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial2.visible = false
-			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial0.visible = true
-			tutorailState = 0
-			pass
-	pass # replace with function body
+#this block of code tkae care of tutorail cycling - quoted for menu node re arrengment
+#func _on_TutorialTimeout_timeout():
+#	match(tutorailState):
+#		0:
+#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial0.visible = false
+#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial1.visible = true
+#			tutorailState = 1
+#			pass
+#		1:
+#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial1.visible = false
+#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial2.visible = true
+#			tutorailState = 2
+#			pass
+#		2:
+#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial2.visible = false
+#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial0.visible = true
+#			tutorailState = 0
+#			pass
+#	pass
 
 
 

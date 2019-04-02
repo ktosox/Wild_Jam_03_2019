@@ -3,12 +3,9 @@
 [ext_resource path="res://Resources/Fonts/gabrielle/Gabrielle.ttf" type="DynamicFontData" id=1]
 
 [resource]
-
-size = 114
-use_mipmaps = false
+size = 92
 use_filter = true
 extra_spacing_char = 1
 extra_spacing_space = -10
 font_data = ExtResource( 1 )
-_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 

@@ -27,6 +27,7 @@ anchor_bottom = 1.0
 size_flags_vertical = 3
 
 [node name="ColorRect" type="TextureRect" parent="HBoxContainer"]
+editor/display_folded = true
 margin_right = 322.0
 margin_bottom = 720.0
 size_flags_horizontal = 3
@@ -120,65 +121,67 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ColorRect2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 80.0
-margin_right = -80.0
-margin_bottom = -25.0
-alignment = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.0
+margin_top = -360.0
+margin_right = 180.0
+margin_bottom = 360.0
+size_flags_horizontal = 0
 
 [node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 145.0
-margin_right = 390.0
-margin_bottom = 160.0
-rect_min_size = Vector2( 0, 15 )
+margin_right = 360.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 0, 90 )
 
 [node name="Button_NewGame" parent="HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 164.0
-margin_right = 390.0
-margin_bottom = 244.0
+margin_top = 94.0
+margin_right = 360.0
+margin_bottom = 209.0
 text = "New Game"
 
 [node name="MarginContainer5" type="MarginContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 248.0
-margin_right = 390.0
-margin_bottom = 258.0
+margin_top = 213.0
+margin_right = 360.0
+margin_bottom = 223.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Button_Continue" parent="HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 262.0
-margin_right = 390.0
+margin_top = 227.0
+margin_right = 360.0
 margin_bottom = 342.0
 text = "Continue"
 
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
 margin_top = 346.0
-margin_right = 390.0
+margin_right = 360.0
 margin_bottom = 356.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Button_Intro" parent="HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 5 )]
 margin_top = 360.0
-margin_right = 390.0
-margin_bottom = 440.0
+margin_right = 360.0
+margin_bottom = 475.0
 text = "Intro"
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 444.0
-margin_right = 390.0
-margin_bottom = 454.0
+margin_top = 479.0
+margin_right = 360.0
+margin_bottom = 489.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Button_Exit" parent="HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 458.0
-margin_right = 390.0
-margin_bottom = 538.0
+margin_top = 493.0
+margin_right = 360.0
+margin_bottom = 608.0
 text = "Exit"
 
 [node name="MarginContainer4" type="MarginContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 542.0
-margin_right = 390.0
-margin_bottom = 550.0
+margin_top = 612.0
+margin_right = 360.0
+margin_bottom = 620.0
 rect_min_size = Vector2( 0, 8 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
@@ -196,12 +199,19 @@ color = Color( 0.137255, 0, 0.698039, 1 )
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel"]
 modulate = Color( 0, 0.886719, 0.803589, 1 )
-anchor_bottom = 1.0
-margin_right = 426.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -198.0
+margin_top = -75.0
+margin_right = 198.0
+margin_bottom = 75.0
 custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0.321569, 0.341176, 0.843137, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "Lorem Ipsum"
+align = 1
 valign = 1
 
 [node name="ColorRect3" type="ColorRect" parent="HBoxContainer/VBoxContainer"]

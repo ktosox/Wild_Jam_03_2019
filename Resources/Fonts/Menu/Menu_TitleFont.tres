@@ -3,7 +3,7 @@
 [ext_resource path="res://Resources/Fonts/gabrielle/Gabrielle.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 92
+size = 82
 use_filter = true
 extra_spacing_char = 1
 extra_spacing_space = -10

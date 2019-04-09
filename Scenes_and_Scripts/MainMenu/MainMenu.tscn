@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes_and_Scripts/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Artwork/Interface/menu_background.png" type="Texture" id=2]
@@ -9,6 +9,35 @@
 [ext_resource path="res://Resources/Tutorial0.png" type="Texture" id=7]
 [ext_resource path="res://Resources/Tutorial1.png" type="Texture" id=8]
 [ext_resource path="res://Resources/Tutorial2.png" type="Texture" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "waggle"
+length = 16.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Top/Bottom:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4.3, 8, 11, 13, 16 ),
+"transitions": PoolRealArray( 1, 0.233258, 8, 1, 0.517632, 3.73213, 1 ),
+"update": 0,
+"values": [ Vector2( 1.57263, 377.227 ), Vector2( -37.091, 375.795 ), Vector2( -16.3272, 378.898 ), Vector2( 1.57263, 377.227 ), Vector2( 90.9274, 375.236 ), Vector2( 92.1458, 373.566 ), Vector2( 1.57263, 377.227 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Top/Bottom:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 6.2, 8, 11.1, 13, 16 ),
+"transitions": PoolRealArray( 1, 0.267944, 0.68302, 1, 1, 2.2974, 1 ),
+"update": 0,
+"values": [ 0.0, 20.0, 2.0, 0.0, -5.4386, -10.0, 0.0 ]
+}
 
 [node name="MainMenu" type="Control"]
 pause_mode = 2
@@ -27,14 +56,44 @@ anchor_bottom = 1.0
 size_flags_vertical = 3
 
 [node name="ColorRect" type="TextureRect" parent="HBoxContainer"]
-editor/display_folded = true
 margin_right = 322.0
 margin_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_vertical = 9
-texture = ExtResource( 3 )
 expand = true
 stretch_mode = 1
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="Skeleton2D" type="Skeleton2D" parent="HBoxContainer/ColorRect"]
+
+[node name="Top" type="Bone2D" parent="HBoxContainer/ColorRect/Skeleton2D"]
+position = Vector2( 151.003, 25.8474 )
+rest = Transform2D( 1, 0, 0, 1, 151.003, 25.8474 )
+
+[node name="Bottom" type="Bone2D" parent="HBoxContainer/ColorRect/Skeleton2D/Top"]
+position = Vector2( 49.2968, 375.298 )
+rotation = -0.0644347
+rest = Transform2D( 1, 0, 0, 1, 1.57263, 377.227 )
+
+[node name="Tip" type="Bone2D" parent="HBoxContainer/ColorRect/Skeleton2D/Top/Bottom"]
+position = Vector2( 6.80194, 378.188 )
+rest = Transform2D( 1, 0, 0, 1, 6.80194, 378.188 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HBoxContainer/ColorRect/Skeleton2D"]
+autoplay = "waggle"
+anims/waggle = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="HBoxContainer/ColorRect"]
+position = Vector2( 7.75635, 5.54022 )
+texture = ExtResource( 3 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( -10.1963, 716.656, 312.026, 715.421, 314.495, -6.80124, -6.4926, -5.56668, 313.261, 343.816, -10.1963, 356.162 )
+uv = PoolVector2Array( -12.5132, 785.578, 332.232, 783.251, 320.106, 13.0527, -9.79236, 11.5162, 313.261, 343.816, -10.1963, 356.162 )
+polygons = [ PoolIntArray( 3, 5, 4, 2 ), PoolIntArray( 5, 0, 1, 4 ) ]
+bones = [ NodePath("Top"), PoolRealArray( 0, 0, 0.5, 0.5, 0.5, 0.5 ), NodePath("Top/Bottom"), PoolRealArray( 0.5, 0.5, 0, 0, 0.5, 0.5 ), NodePath("Top/Bottom/Tip"), PoolRealArray( 0, 0, 0, 0, 0, 0 ) ]
+internal_vertex_count = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/ColorRect"]
 margin_left = 48.0
@@ -112,6 +171,7 @@ rect_min_size = Vector2( 0, 15 )
 size_flags_vertical = 3
 
 [node name="ColorRect2" type="TextureRect" parent="HBoxContainer"]
+editor/display_folded = true
 margin_left = 326.0
 margin_right = 876.0
 margin_bottom = 720.0

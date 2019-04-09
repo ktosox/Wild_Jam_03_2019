@@ -19,8 +19,6 @@ position = Vector2( 80, 290 )
 gravity_scale = 0.0
 script = ExtResource( 1 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-
 [node name="SpawnAnimation" type="Particles2D" parent="."]
 emitting = false
 amount = 114

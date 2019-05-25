@@ -29,4 +29,3 @@ angle_random = 1.0
 scale = 0.8
 scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
-

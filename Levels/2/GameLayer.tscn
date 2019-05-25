@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes_and_Scripts/GameCore/GameLayerHolder.gd" type="Script" id=1]
-[ext_resource path="res://Scenes_and_Scripts/GameCore/ColorLayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GameCore/GameLayerHolder.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/GameCore/ColorLayer.tscn" type="PackedScene" id=2]
+
 
 [node name="GameLayerHolder" type="Node"]
 script = ExtResource( 1 )

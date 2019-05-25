@@ -1,12 +1,14 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scenes_and_Scripts/Player/PlayerGhost.gd" type="Script" id=1]
-[ext_resource path="res://Scenes_and_Scripts/Player/spawn_particles.tres" type="Material" id=2]
+[ext_resource path="res://Characters/Player/PlayerGhost.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Player/spawn_particles.tres" type="Material" id=2]
 [ext_resource path="res://Resources/Artwork/Effects/effect9.png" type="Texture" id=3]
-[ext_resource path="res://Scenes_and_Scripts/Player/Ghost_trail2.tres" type="Material" id=4]
+[ext_resource path="res://Characters/Player/Ghost_trail2.tres" type="Material" id=4]
 [ext_resource path="res://Resources/Artwork/Effects/effect6.png" type="Texture" id=5]
-[ext_resource path="res://Scenes_and_Scripts/Player/Ghost_trail.tres" type="Material" id=6]
+[ext_resource path="res://Characters/Player/Ghost_trail.tres" type="Material" id=6]
 [ext_resource path="res://Resources/Artwork/Effects/effect2.png" type="Texture" id=7]
+
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 19.3323

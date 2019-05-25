@@ -43,4 +43,4 @@ func _on_BaseArea_body_entered(body):
 func _on_BaseArea_body_exited(body):
 	if(body == parentGameState.player):
 		hauNot()
-	pass # Replace with function body.
+	pass

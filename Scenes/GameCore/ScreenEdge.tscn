@@ -68,4 +68,3 @@ polygon = PoolVector2Array( 32, -32, -32, -32, -32, 32, 32, 32 )
 __meta__ = {
 "_edit_lock_": true
 }
-

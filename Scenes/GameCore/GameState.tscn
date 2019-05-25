@@ -1,11 +1,14 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes_and_Scripts/GameCore/GameState.gd" type="Script" id=1]
-[ext_resource path="res://Scenes_and_Scripts/GameCore/ScreenEdge.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes_and_Scripts/Bases/GenericBase.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes_and_Scripts/Environment/SpawnPlatform.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes_and_Scripts/Environment/ExitPortal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes_and_Scripts/Interface/Overlay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/GameCore/GameState.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/GameCore/ScreenEdge.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Bases/GenericBase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Environment/SpawnPlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Environment/ExitPortal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Interface/Overlay.tscn" type="PackedScene" id=6]
+
+
+
 
 [node name="GameState" type="Node"]
 script = ExtResource( 1 )

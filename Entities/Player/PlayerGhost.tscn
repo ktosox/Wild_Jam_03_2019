@@ -1,14 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Characters/Player/PlayerGhost.gd" type="Script" id=1]
-[ext_resource path="res://Characters/Player/spawn_particles.tres" type="Material" id=2]
+[ext_resource path="res://Entities/Player/PlayerGhost.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Player/spawn_particles.tres" type="Material" id=2]
 [ext_resource path="res://Resources/Artwork/Effects/effect9.png" type="Texture" id=3]
-[ext_resource path="res://Characters/Player/Ghost_trail2.tres" type="Material" id=4]
+[ext_resource path="res://Entities/Player/Ghost_trail2.tres" type="Material" id=4]
 [ext_resource path="res://Resources/Artwork/Effects/effect6.png" type="Texture" id=5]
-[ext_resource path="res://Characters/Player/Ghost_trail.tres" type="Material" id=6]
+[ext_resource path="res://Entities/Player/Ghost_trail.tres" type="Material" id=6]
 [ext_resource path="res://Resources/Artwork/Effects/effect2.png" type="Texture" id=7]
-
-
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 19.3323
@@ -69,5 +67,4 @@ __meta__ = {
 [node name="SpawnDelay" type="Timer" parent="."]
 wait_time = 0.8
 one_shot = true
-
 [connection signal="timeout" from="SpawnDelay" to="." method="_on_SpawnDelay_timeout"]

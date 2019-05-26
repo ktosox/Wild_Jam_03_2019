@@ -34,4 +34,3 @@ scale_random = 0.3
 scale_curve = SubResource( 6 )
 color_ramp = SubResource( 2 )
 hue_variation_curve = SubResource( 4 )
-

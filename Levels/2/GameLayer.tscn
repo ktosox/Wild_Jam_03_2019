@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/GameCore/GameLayerHolder.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/GameCore/ColorLayer.tscn" type="PackedScene" id=2]
-
+[ext_resource path="res://Source/Core/GameLayerHolder.gd" type="Script" id=1]
+[ext_resource path="res://Source/Core/ColorLayer.tscn" type="PackedScene" id=2]
 
 [node name="GameLayerHolder" type="Node"]
 script = ExtResource( 1 )
@@ -20,4 +19,3 @@ tile_data = PoolIntArray( 983062, 1, 0, 1179670, 1, 0, 1507349, 1, 0, 1507355, 1
 
 [node name="LayerBlue" parent="." instance=ExtResource( 2 )]
 tile_data = PoolIntArray( 33, 0, 0, 65590, 0, 0, 65591, 0, 0, 65594, 0, 0, 65595, 0, 0, 65596, 0, 0, 131085, 0, 0, 131086, 0, 0, 131132, 0, 0, 196631, 0, 0, 196639, 0, 0, 196640, 0, 0, 196641, 0, 0, 196642, 0, 0, 196643, 0, 0, 262148, 0, 0, 262168, 0, 0, 262171, 0, 0, 262173, 0, 0, 262174, 0, 0, 262183, 0, 0, 262204, 0, 0, 327705, 0, 0, 393240, 0, 0, 393264, 0, 0, 393266, 0, 0, 393267, 0, 0, 458776, 0, 0, 589835, 0, 0, 589836, 0, 0, 720940, 0, 0, 851995, 0, 0, 852017, 0, 0, 917525, 0, 0, 1048603, 0, 0, 1048623, 0, 0, 1114140, 0, 0, 1114141, 0, 0, 1245227, 0, 0, 1376289, 0, 0, 1376307, 0, 0, 1441806, 0, 0, 1441807, 0, 0, 1507381, 0, 0, 1572894, 0, 0, 1572921, 0, 0, 1769519, 0, 0, 1900590, 0, 0, 1966105, 0, 0, 1966117, 0, 0, 1966120, 0, 0 )
-

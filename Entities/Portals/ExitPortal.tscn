@@ -1,10 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Characters/Environment/ExitPortal.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Portals/ExitPortal.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Artwork/Portal/ship_bodyv3.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Artwork/Portal/Rainbow_Splash_zoom5.png" type="Texture" id=3]
-
-
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 58.3183
@@ -51,5 +49,4 @@ anims/rotatePortal = SubResource( 2 )
 modulate = Color( 1, 1, 1, 0.464078 )
 rotation = 4.58484
 texture = ExtResource( 3 )
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

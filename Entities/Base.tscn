@@ -1,11 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Characters/Bases/Base.gd" type="Script" id=1]
-[ext_resource path="res://Characters/Player/Ghost_trail.tres" type="Material" id=2]
+[ext_resource path="res://Entities/Base.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Player/Ghost_trail.tres" type="Material" id=2]
 [ext_resource path="res://Resources/Artwork/Effects/effect1.png" type="Texture" id=3]
-
-
-
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 13.3333
@@ -29,6 +26,5 @@ gravity = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseArea"]
 scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
-
 [connection signal="body_entered" from="BaseArea" to="." method="_on_BaseArea_body_entered"]
 [connection signal="body_exited" from="BaseArea" to="." method="_on_BaseArea_body_exited"]

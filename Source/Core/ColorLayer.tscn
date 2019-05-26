@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Characters/Environment/new_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/GameCore/ColorLayer.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Environment/WallsTileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Source/Core/ColorLayer.gd" type="Script" id=2]
 
 [node name="ColorLayer" type="TileMap"]
 tile_set = ExtResource( 1 )

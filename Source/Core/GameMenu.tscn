@@ -1,10 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/GameCore/GameMenu.gd" type="Script" id=1]
+[ext_resource path="res://Source/Core/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Artwork/Interface/menu_backgroud.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Artwork/Interface/frame_04_04.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/GameCore/GameMenuButton.tscn" type="PackedScene" id=4]
-
+[ext_resource path="res://Source/Core/GameMenuButton.tscn" type="PackedScene" id=4]
 
 [node name="GameMenu" type="Control"]
 pause_mode = 2
@@ -98,7 +97,6 @@ margin_top = 136.0
 margin_right = 165.0
 margin_bottom = 196.0
 text = "MENU"
-
 [connection signal="pressed" from="TextureRect/VBoxContainer/VBoxContainer/Button_return" to="." method="_on_Button_return_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/VBoxContainer/Button_moar" to="." method="_on_Button_moar_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/VBoxContainer/Button_exit" to="." method="_on_Button_exit_pressed"]

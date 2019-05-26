@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/GameCore/GameLayerHolder.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/GameCore/ColorLayer.tscn" type="PackedScene" id=2]
-
+[ext_resource path="res://Source/Core/GameLayerHolder.gd" type="Script" id=1]
+[ext_resource path="res://Source/Core/ColorLayer.tscn" type="PackedScene" id=2]
 
 [node name="GameLayerHolder" type="Node"]
 script = ExtResource( 1 )
@@ -17,4 +16,3 @@ color = Color( 0, 0, 0, 1 )
 [node name="LayerGreen" parent="." instance=ExtResource( 2 )]
 
 [node name="LayerBlue" parent="." instance=ExtResource( 2 )]
-

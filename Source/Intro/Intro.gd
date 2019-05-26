@@ -12,7 +12,7 @@ func _ready():
 
 func _input(event):
 	if(event.is_pressed()):
-		get_tree().change_scene("res://Scenes_and_Scripts/MainMenu/MainMenu.tscn")
+		get_tree().change_scene("res://Source/MainMenu/MainMenu.tscn")
 
 #func _process(delta):
 	

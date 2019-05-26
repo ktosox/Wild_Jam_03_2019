@@ -26,4 +26,3 @@ custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 custom_fonts/font = ExtResource( 4 )
 text = "Test Text"
-

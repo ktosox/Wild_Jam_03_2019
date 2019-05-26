@@ -17,7 +17,7 @@ func _ready():
 #	pass
 
 func loadLevel():
-	get_tree().change_scene("res://Scenes_and_Scripts/GameCore/GameState.tscn")
+	get_tree().change_scene("res://Source/Core/GameState.tscn")
 	#Save.Level
 	pass
 	

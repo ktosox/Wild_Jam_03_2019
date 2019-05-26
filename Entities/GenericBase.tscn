@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Characters/Bases/GenericBase.gd" type="Script" id=1]
-[ext_resource path="res://Characters/Bases/Base.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/GenericBase.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Base.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Resources/Artwork/Base/Base_bottom.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Artwork/Base/Base_frame.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Artwork/Clock/clock_circle2.png" type="Texture" id=5]
@@ -11,8 +11,6 @@
 [ext_resource path="res://Resources/Artwork/Clock/clock_hand.png" type="Texture" id=9]
 [ext_resource path="res://Resources/Artwork/Base/Base_middle1.png" type="Texture" id=10]
 [ext_resource path="res://Resources/Artwork/Base/Base_middle3.png" type="Texture" id=11]
-
-
 
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"
@@ -107,4 +105,3 @@ visible = false
 rotation = 3.14159
 scale = Vector2( 0.98, 0.98 )
 texture = ExtResource( 11 )
-

@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scenes/MainMenu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Source/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Artwork/Interface/menu_background.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Artwork/Interface/flag_01_03.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Artwork/Interface/main_menu_back.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/MainMenu/MenuButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Source/MainMenu/MenuButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/Fonts/Menu/Menu_TitleFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Resources/Tutorial0.png" type="Texture" id=7]
 [ext_resource path="res://Resources/Tutorial1.png" type="Texture" id=8]

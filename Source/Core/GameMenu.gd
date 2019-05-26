@@ -7,9 +7,9 @@ func _on_Button_return_pressed():
 
 func _on_Button_moar_pressed():
 	get_tree().paused = false
-	get_tree().change_scene("res://Scenes_and_Scripts/GameCore/GameManager.tscn")
+	get_tree().change_scene("res://Source/Core/GameManager.tscn")
 
 
 func _on_Button_exit_pressed():
 	get_tree().paused = false
-	get_tree().change_scene("res://Scenes_and_Scripts/MainMenu/MainMenu.tscn")
+	get_tree().change_scene("res://Source/MainMenu/MainMenu.tscn")

@@ -4,9 +4,9 @@ extends Node
 
 #used by all levels for gameplay stuff
 
-var gameMenu = load("res://Scenes_and_Scripts/GameCore/GameMenu.tscn")
-var gameOver = load("res://Scenes_and_Scripts/GameCore/GameOver.tscn")
-var playerBase = load("res://Scenes_and_Scripts/Player/PlayerGhost.tscn")
+var gameMenu = load("res://Source/Core/GameMenu.tscn")
+var gameOver = load("res://Source/Core/GameOver.tscn")
+var playerBase = load("res://Entities/Player/PlayerGhost.tscn")
 var levelLayout #to be set at start
 var player # the player controlled ghost entity
 var currentBase # the current base accepting input and holding player

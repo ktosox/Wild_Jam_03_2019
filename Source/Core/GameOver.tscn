@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Source/Core/GameOver.gd" type="Script" id=1]
-[ext_resource path="res://Resources/Fonts/Game/Game_GameOverFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Source/Core/Game_GameOverFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Source/Core/GameMenuButton.tscn" type="PackedScene" id=3]
+
 
 [node name="GameOver" type="Control"]
 pause_mode = 2

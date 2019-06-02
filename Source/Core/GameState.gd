@@ -6,15 +6,16 @@ extends Node
 
 var gameMenu = load("res://Source/Core/GameMenu.tscn")
 var gameOver = load("res://Source/Core/GameOver.tscn")
-var playerBase = load("res://Entities/Player/PlayerGhost.tscn")
+var playerBase = load("res://Entities/Player/PlayerGhost.tscn") #the source class for the player class
 var levelLayout #to be set at start
 var player # the player controlled ghost entity
 var currentBase # the current base accepting input and holding player
 
-var listOfBaseButtons = [81,87,69,82,65,83,68,70,90,88,67,86] #used to avoid errors while based is accepting input
+#bellow is very much depriciated
+#var listOfBaseButtons = [81,87,69,82,65,83,68,70,90,88,67,86] #used to avoid errors while based is accepting input
 
 var activeLayer 
-var myLevelLayout #this gamestates level layout - depends on level
+var myLevelLayout #this gamestate's level layout - depends on level
 
 var gameMode = 0 # 0 for mosue control / 1 for keyboard control
 
@@ -47,11 +48,13 @@ func _input(event):
 				player.followMouse = false
 	else:
 	#base mode stuff
-		if(event.is_class("InputEventKey") and event.is_pressed()):
-			if(listOfBaseButtons.has(event.get_scancode())):
-				currentBase.processInput(event)
-			else:
-				print("button was wrong")
+		pass
+		#to be impleneted
+#		if(event.is_class("InputEventKey") and event.is_pressed()):
+#			if(listOfBaseButtons.has(event.get_scancode())):
+#				currentBase.processInput(event)
+#			else:
+#				print("button was wrong")
 
 
 func switchGameMode():
@@ -77,21 +80,21 @@ func stopPosses():
 func setLayout():
 	match(Save.Level):
 		0:
-			levelLayout = preload("res://Levels/0/GameLayer.tscn")
+			levelLayout = preload("res://Levels/0/LevelLayout.tscn")
 		1:
-			levelLayout = preload("res://Levels/1/GameLayer.tscn")
+			levelLayout = preload("res://Levels/1/LevelLayout.tscn")
 		2:
-			levelLayout = preload("res://Levels/2/GameLayer.tscn")
+			levelLayout = preload("res://Levels/2/LevelLayout.tscn")
 		_:
-			print("the current level is ",Save.Level," so fuck you, LOL")
-			levelLayout = preload("res://Levels/0/GameLayer.tscn")
+			print("the current level is ",Save.Level," and I dont know what to do about it, so fuck you - Im loading the tutorial, LOL")
+			levelLayout = preload("res://Levels/0/LevelLayout.tscn")
 
-func processBaseOutput(command):
-	print ("command from base recieved: ", command)
-	if(command == 6):
-		stopPosses()
-	# called by base to process stuff caused by button press
-	pass
+#func processBaseOutput(command):
+#	print ("command from base recieved: ", command)
+#	if(command == 6):
+#		stopPosses()
+#	# called by base to process stuff caused by button press
+#	pass
 
 
 func switchActiveLayer(newLayer):
@@ -125,6 +128,14 @@ func openGameMenu():
 	var pauseMenu = gameMenu.instance()
 	self.add_child(pauseMenu, true)
 	get_tree().paused = true
+	pass
+
+func startState():
+	#load stuff like LL
+	
+	pass
+
+func endState():
 	pass
 
 func _on_FadeInTimer_timeout():

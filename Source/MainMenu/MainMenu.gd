@@ -1,9 +1,6 @@
 extends Control
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-#var tutorailState = 0
+var parentGameManager = self.get_owner()
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -22,20 +19,20 @@ func _ready():
 
 
 func _on_Button_Exit_pressed():
-	get_tree().quit()
+	parentGameManager.endGame()
 
 
 func _on_Button_NewGame_pressed():
 	Save.Level = 0
-	get_tree().change_scene("res://Source/Core/GameState.tscn")
+	parentGameManager.loadLevel()
 
 
 func _on_Button_Intro_pressed():
-	get_tree().change_scene("res://Source/Intro/Intro.tscn")
+	parentGameManager.switchIntro()
 
 
 func _on_Button_Continue_pressed():
-	get_tree().change_scene("res://Source/Core/GameState.tscn")
+	parentGameManager.loadLevel()
 
 #this block of code tkae care of tutorail cycling - quoted for menu node re arrengment
 #func _on_TutorialTimeout_timeout():

@@ -16,12 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Wild_Jam_03_2019"
-run/main_scene="res://Source/MainMenu/MainMenu.tscn"
+run/main_scene="res://Source/Intro/Intro.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Save="*res://Save.tscn"
+GM="*res://Source/Core/GameManager.tscn"
 
 [display]
 
@@ -55,4 +56,5 @@ button_R={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

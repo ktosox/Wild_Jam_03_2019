@@ -10,7 +10,6 @@
 [ext_resource path="res://Resources/Tutorial1.png" type="Texture" id=8]
 [ext_resource path="res://Resources/Tutorial2.png" type="Texture" id=9]
 
-
 [node name="MainMenu" type="Control"]
 pause_mode = 2
 anchor_right = 1.0

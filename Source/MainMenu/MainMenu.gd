@@ -1,10 +1,6 @@
 extends Control
 
-var parentGameManager = self.get_owner()
-
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	print("current level is: ", Save.Level)
 	if (Save.Level == 0):
 		$VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.modulate = Color(0.2,0.2,0.2)
@@ -19,20 +15,21 @@ func _ready():
 
 
 func _on_Button_Exit_pressed():
-	parentGameManager.endGame()
+	GM.endGame()
+
 
 
 func _on_Button_NewGame_pressed():
 	Save.Level = 0
-	parentGameManager.loadLevel()
+	GM.loadLevel()
 
 
 func _on_Button_Intro_pressed():
-	parentGameManager.switchIntro()
+	GM.switchIntro()
 
 
 func _on_Button_Continue_pressed():
-	parentGameManager.loadLevel()
+	GM.loadLevel()
 
 #this block of code tkae care of tutorail cycling - quoted for menu node re arrengment
 #func _on_TutorialTimeout_timeout():

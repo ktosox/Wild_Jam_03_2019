@@ -1,7 +1,5 @@
 extends Node
 
-var parentGameManager = self.get_owner()
-
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -10,7 +8,7 @@ func _ready():
 
 func _input(event):
 	if(event.is_pressed()):
-		parentGameManager.switchMainMenu()
+		GM.switchMainMenu()
 
 #func _process(delta):
 	

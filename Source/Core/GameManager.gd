@@ -27,7 +27,7 @@ func _ready():
 
 func loadLevel(selectedLevel = Save.level):
 	#loads the selected level
-	
+	print ("now starting Level: ", selectedLevel)
 	get_tree().change_scene(GameState)
 	#Save.Level
 	pass
@@ -46,16 +46,12 @@ func switchMainMenu():
 	get_tree().change_scene(MainMenu)
 	pass
 
-
 func resetLevel():
 	#reloads current level
 	pass
 	
-func gameOver():
-	#show game over screen
-	pass
-
 
 func endGame():
 	#end games after quit button was presed
+	get_tree().quit()
 	pass

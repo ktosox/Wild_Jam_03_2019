@@ -21,7 +21,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Save="*res://Save.tscn"
 GM="*res://Source/Core/GameManager.tscn"
 
 [display]

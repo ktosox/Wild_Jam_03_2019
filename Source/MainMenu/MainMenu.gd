@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-	print("current level is: ", Save.Level)
-	if (Save.Level == 0):
+	print("current level is: ", GM.Level)
+	if (GM.Level == 0):
 		$VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.modulate = Color(0.2,0.2,0.2)
 		$VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.mouse_filter = Control.MOUSE_FILTER_IGNORE
 #func _process(delta):
@@ -20,7 +20,7 @@ func _on_Button_Exit_pressed():
 
 
 func _on_Button_NewGame_pressed():
-	Save.Level = 0
+	GM.Level = 0
 	GM.loadLevel()
 
 

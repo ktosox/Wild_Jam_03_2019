@@ -14,10 +14,12 @@ var MainMenu = "res://Source/MainMenu/MainMenu.tscn"
 var Intro = "res://Source/Intro/Intro.tscn"
 #--------------------------------------
 
+var Level
 
 func _ready():
+	Level = 1
 	#always on ready go to intro
-	switchIntro()
+	#switchIntro()
 	pass
 
 #func _process(delta):
@@ -25,9 +27,9 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func loadLevel(selectedLevel = Save.level):
+func loadLevel():
 	#loads the selected level
-	print ("now starting Level: ", selectedLevel)
+	print ("now starting Level: ", Level)
 	get_tree().change_scene(GameState)
 	#Save.Level
 	pass

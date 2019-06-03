@@ -17,7 +17,7 @@ var Intro = "res://Source/Intro/Intro.tscn"
 var Level
 
 func _ready():
-	Level = 1
+	Level = 0
 	#always on ready go to intro
 	#switchIntro()
 	pass

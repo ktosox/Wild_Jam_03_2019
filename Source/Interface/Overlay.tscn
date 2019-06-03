@@ -13,29 +13,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="ViewportContainer" type="ViewportContainer" parent="VBoxContainer"]
 margin_right = 1280.0
-margin_bottom = 576.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Panel" type="Panel" parent="VBoxContainer"]
-margin_top = 580.0
-margin_right = 1280.0
 margin_bottom = 720.0
-rect_min_size = Vector2( 0, 140 )
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-alignment = 1
 
 [node name="TransitionNode" type="Control" parent="."]
 anchor_right = 1.0

@@ -15,6 +15,6 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	parentGameState.lockPlayer(position)
-	parentGameState.gameWon()
+#	parentGameState.lockPlayer(position)
+#	parentGameState.gameWon()
 	pass 

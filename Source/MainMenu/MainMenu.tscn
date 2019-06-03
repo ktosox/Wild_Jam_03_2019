@@ -72,6 +72,7 @@ margin_right = 222.0
 margin_bottom = 257.0
 min_value = -15.0
 max_value = 15.0
+ticks_on_borders = false
 
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/ColorRect/ContainerAudioSLiders"]
 margin_top = 261.0
@@ -123,7 +124,6 @@ rect_min_size = Vector2( 0, 15 )
 size_flags_vertical = 3
 
 [node name="ColorRect2" type="TextureRect" parent="HBoxContainer"]
-editor/display_folded = true
 margin_left = 326.0
 margin_right = 876.0
 margin_bottom = 720.0

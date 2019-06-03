@@ -3,8 +3,8 @@ extends Control
 func _ready():
 	print("current level is: ", GM.Level)
 	if (GM.Level == 0):
-		$VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.modulate = Color(0.2,0.2,0.2)
-		$VBoxContainer/HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		$HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.modulate = Color(0.2,0.2,0.2)
+		$HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.mouse_filter = Control.MOUSE_FILTER_IGNORE
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

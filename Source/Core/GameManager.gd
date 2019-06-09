@@ -43,6 +43,11 @@ func switchMainMenu():
 	get_tree().change_scene(MainMenu)
 	pass
 
+func switchLevelSelection():
+	#switchges to LevelSelection
+	get_tree().change_scene(LevelSelection)
+	pass
+
 func resetLevel():
 	#reloads current level
 	pass

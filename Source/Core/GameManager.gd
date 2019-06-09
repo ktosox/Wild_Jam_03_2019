@@ -1,17 +1,12 @@
 extends Node
 
-#What this scene does:
-# changes GameStates and manages switches betweeen intro / game /mainmenu
-# tracks game progress - like current level and level progression
-# manages game options like audio level brightnes etc.
 
-#What is does not do:
-# gameplay stuff - should not talk to any in game objects
 
 #All the scene address should go here:
 var GameState = "res://Source/Core/GameState.tscn"
 var MainMenu = "res://Source/MainMenu/MainMenu.tscn"
 var Intro = "res://Source/Intro/Intro.tscn"
+var LevelSelection = "res://Source/LevelSelection/LevelSelection.tscn"
 #--------------------------------------
 
 var Level

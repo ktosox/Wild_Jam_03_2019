@@ -1,0 +1,4 @@
+An extensive list of all the task GM is responsible of:
+- Managing changes between scenes like intro, main menu or game
+- Tracks game progress - current level and level progression
+- Manages game options like audio level brightnes etc.

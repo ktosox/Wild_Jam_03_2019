@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="BallBouncy" type="Node2D"]
+
+[node name="Body" type="Polygon2D" parent="."]
+color = Color( 0.0470588, 0.223529, 0.309804, 1 )
+polygon = PoolVector2Array( 8.29782, -0.746937, 7.92977, 5.69396, 4.80133, 9.00643, -3.2958, 10.1106, -9.18462, 4.95786, -7.71242, -4.61148, -1.45554, -8.29199, 5.72146, -8.10796 )

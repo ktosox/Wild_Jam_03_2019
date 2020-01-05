@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://KeyScenes/Core/GameLayerHolder.gd" type="Script" id=1]
+[ext_resource path="res://KeyScenes/Core/ColorLayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameParts/Portals/SpawnPlatform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameParts/Portals/ExitPortal.tscn" type="PackedScene" id=4]
+
+[node name="GameLayerHolder" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="LayerRed" parent="." instance=ExtResource( 2 )]
+
+[node name="LayerGreen" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.14902, 0.396078, 0.054902, 1 )
+tile_data = PoolIntArray( 1703936, 0, 0, 1703941, 0, 0, 1703946, 0, 0, 1703951, 0, 0, 1703956, 0, 0, 2031616, 0, 0, 2031621, 0, 0, 2031626, 0, 0, 2031631, 0, 0, 2031636, 0, 0 )
+
+[node name="LayerBlue" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.0235294, 0.0901961, 0.631373, 1 )
+tile_data = PoolIntArray( 9, -1610612735, 0, 12, 1610612736, 0, 25, 1610612736, 0, 29, 0, 0, 34, 0, 0, 39, 0, 0, 44, 0, 0, 49, 0, 0, 54, 0, 0, 59, 0, 0, 327692, 1610612736, 0, 327705, 1610612736, 0, 327709, 0, 0, 327714, 0, 0, 327719, 0, 0, 327724, 0, 0, 327729, 0, 0, 327734, 0, 0, 327739, 0, 0, 524297, 1610612736, 0, 524300, 1610612736, 0, 655390, 1610612737, 0, 655392, 1, 0, 655400, 1, 0, 655408, 1, 0, 655416, 1, 0, 1179678, 1610612737, 0, 1179686, 1610612737, 0, 1179699, 1, 0, 1179704, 1, 0, 1310720, 1, 0, 1376281, 0, 0, 1376286, 0, 0, 1376291, 1, 0, 1376305, 0, 0, 1376310, 0, 0, 1376315, 0, 0, 1507328, 1, 0, 1572899, 1, 0, 1703961, 0, 0, 1703966, 0, 0, 1703985, 0, 0, 1703990, 0, 0, 1703995, 0, 0, 1769507, 1, 0, 1966115, 1, 0, 2031641, 0, 0, 2031646, 0, 0, 2031665, 0, 0, 2031670, 0, 0, 2031675, 0, 0, 2162723, 1, 0 )
+
+[node name="SpawnPlatform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 441.6, 459.004 )
+
+[node name="ExitPortal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 922.436, 655.437 )

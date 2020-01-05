@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://GameParts/Player/PlayerGhost.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Artwork/Effects/effect9.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Artwork/Effects/effect2.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 19.3323
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.8872 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.3592 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 49.3909
+
+[node name="PlayerGhost" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource( 1 )
+
+[node name="SpawnAnimation" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 114
+lifetime = 1.5
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+texture = ExtResource( 2 )
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Trail" type="CPUParticles2D" parent="."]
+modulate = Color( 1, 1, 1, 0.392274 )
+amount = 30
+lifetime = 2.0
+speed_scale = 2.0
+local_coords = false
+texture = ExtResource( 3 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+linear_accel = 43.01
+linear_accel_random = 0.3
+scale_amount_curve = SubResource( 3 )
+
+[node name="MouseTrackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseTrackRange"]
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SpawnDelay" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+[connection signal="timeout" from="SpawnDelay" to="." method="_on_SpawnDelay_timeout"]

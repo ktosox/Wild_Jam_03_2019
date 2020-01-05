@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://KeyScenes/Intro/Intro.gd" type="Script" id=1]
+
+[node name="Intro" type="Node"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.00801086, 0.0190717, 0.136719, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 188.0
+margin_top = 109.0
+margin_right = 668.0
+margin_bottom = 293.0
+text = "Intro:
+stuff hapens
+more stuff?
+ghost flies, maybe?
+more stuffbuilds da main menu from parts
+goes to main menu
+FIN
+
+
+"

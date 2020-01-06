@@ -1,31 +1,40 @@
 extends RigidBody2D
 
-var followMouse = false
-var lockSpeed = 30
-var followSpeed = 50
+var lockSpeed = 360
+var followSpeed = 500
+var velocity = 120
 var resizeSpeed = 2
-var restLocation = Vector2(500,500)
+var hauntPosition = Vector2(500,500)
+var isDragged = false
+var isHaunting = false
+var isSelected = false
 
 func _ready():
-	restLocation = position
-	$Trail.visible = false
-	$Trail2.visible = false
-	$SpawnDelay.start()
+	hauntPosition = position
 
 func _process(delta):
-	if(followMouse):
-		if($Trail2.modulate.a<1.0):
-			$Trail2.modulate.a+=delta * resizeSpeed
-		linear_velocity =  (get_global_mouse_position() - position) * (followSpeed * delta)
-	else:
-		linear_velocity = (restLocation - position) / (lockSpeed * delta)
-		if($Trail2.modulate.a>0.1):
-			$Trail2.modulate.a-=delta * resizeSpeed
+	if(isDragged):
+		var direciton = get_global_mouse_position() - $Head.global_position
+		$Head.linear_velocity=( direciton.clamped(velocity)  * (followSpeed * delta))
+	elif(isHaunting):
+		$Head.linear_velocity=((hauntPosition - position) / (lockSpeed * delta))
+
+func _input(event):
+	if(event.is_action_released("LMB") and isDragged):
+		isDragged = false
+	if(event.is_action_pressed("LMB") and isSelected):
+		isDragged = true
+		isSelected = false
 
 
-func _on_SpawnDelay_timeout():
-	$Trail.visible = true
-	$Trail2.visible = true
-	followMouse = true
-	$SpawnAnimation.emitting = true
-	$SpawnAnimation.restart()
+
+func _on_Head_mouse_entered():
+	print("test")
+	if(!isDragged):
+		isSelected = true
+	pass # Replace with function body.
+
+
+func _on_Head_mouse_exited():
+	isSelected = false
+	pass # Replace with function body.

@@ -1,8 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GameParts/HauntableObjects/HauntableBase.gd" type="Script" id=1]
-[ext_resource path="res://Resources/Artwork/Effects/effect2.png" type="Texture" id=2]
-
+[ext_resource path="res://Resources/Particles/smoke1.png" type="Texture" id=2]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0.168181, 0.995671 ), 0.0, -0.196043, 0, 0, Vector2( 1, 0 ), -0.369943, 0.0, 0, 0 ]
@@ -34,7 +33,7 @@ radial_accel = 2.0
 damping = 10.0
 angle = 180.0
 angle_random = 1.0
-scale_amount = 3.0
+scale_amount = 0.3
 scale_amount_random = 0.3
 scale_amount_curve = SubResource( 1 )
 color_ramp = SubResource( 2 )

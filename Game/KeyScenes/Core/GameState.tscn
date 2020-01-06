@@ -2,7 +2,8 @@
 
 [ext_resource path="res://KeyScenes/Core/GameState.gd" type="Script" id=1]
 [ext_resource path="res://KeyScenes/Core/ScreenEdge.tscn" type="PackedScene" id=2]
-[ext_resource path="res://KeyScenes/Interface/Overlay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://KeyScenes/Core/Control.tscn" type="PackedScene" id=3]
+
 
 
 [node name="GameState" type="Node"]

@@ -10,7 +10,7 @@ var isHaunting = false
 var isSelected = false
 
 func _ready():
-	hauntPosition = position
+	pass
 
 func _process(delta):
 	if(isDragged):

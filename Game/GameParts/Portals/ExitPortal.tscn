@@ -4,9 +4,8 @@
 [ext_resource path="res://Resources/Artwork/Portal/ship_bodyv3.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Artwork/Portal/Rainbow_Splash_zoom5.png" type="Texture" id=3]
 
-
 [sub_resource type="CircleShape2D" id=1]
-radius = 58.3183
+radius = 46.5101
 
 [sub_resource type="Animation" id=2]
 length = 0.6
@@ -19,7 +18,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1.18921, 1.07177, 0.840897 ),
+"transitions": PoolRealArray( 1, 1, -2 ),
 "update": 0,
 "values": [ 360.0, 180.0, 0.0 ]
 }
@@ -51,8 +50,7 @@ autoplay = "rotatePortal"
 anims/rotatePortal = SubResource( 2 )
 
 [node name="Rainbow_Splash_zoom1" type="Sprite" parent="ship_bodyv2"]
-modulate = Color( 1, 1, 1, 0.464078 )
-rotation = 4.58484
+rotation = 3.1756
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GameParts/ColorLayer/Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://GameParts/ColorLayer/ColorLayer.gd" type="Script" id=2]
+
+[node name="ColorLayer" type="TileMap"]
+position = Vector2( 32, 24 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 131092, 6, 0, 458754, 5, 0, 1114135, 4, 0, 1179682, 6, 0 )
+script = ExtResource( 2 )

@@ -54,7 +54,7 @@ __meta__ = {
 }
 
 [node name="Edge4" type="StaticBody2D" parent="."]
-position = Vector2( 630, 620 )
+position = Vector2( 647.688, 757.441 )
 scale = Vector2( 21.5625, 1.17188 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Edge4"]

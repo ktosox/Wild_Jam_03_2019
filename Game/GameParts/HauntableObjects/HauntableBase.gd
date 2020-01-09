@@ -29,14 +29,6 @@ func processInput(buttonPressed):
 	#parentGameState.processBaseOutput(buttonMatrixMap[buttonPressed.get_scancode()])
 
 
-func hauYes():
-	$PossesionParticles.emitting = true
-	pass
-
-func hauNot():
-	$PossesionParticles.emitting = false
-	pass
-
 func _on_BaseArea_body_entered(body):
 	if(body == parentGameState.player): #how player is identified needs a change
 		parentGameState.gameAction(0)

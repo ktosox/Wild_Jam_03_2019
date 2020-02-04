@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://GameParts/Player/PlayerGhost.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Artwork/Effects/effect9.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://Resources/Particles/orb2.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Particles/smoke1.png" type="Texture" id=5]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "Start"
 length = 2.0
 tracks/0/type = "value"
@@ -14,7 +14,7 @@ tracks/0/path = NodePath("SpawnAnimation:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -26,7 +26,7 @@ tracks/1/path = NodePath("SpawnAnimation:amount")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
@@ -38,7 +38,7 @@ tracks/2/path = NodePath("SpawnAnimation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/keys = {
 "times": PoolRealArray( 0.6 ),
 "transitions": PoolRealArray( 1 ),
@@ -66,46 +66,166 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.4, 0.6, 0.8 ),
+"times": PoolRealArray( 0.2, 0.5, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 3, 3 ), Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Trail:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Head:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.1, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.443137 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Head:input_pickable")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Animation" id=2]
+resource_name = "Stop"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Trail:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Head:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 4, 4 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Head:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Head:input_pickable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.33409, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0.344371, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="CircleShape2D" id=6]
-radius = 19.3323
+[sub_resource type="CircleShape2D" id=5]
+radius = 50.0
 
-[sub_resource type="Curve" id=1]
+[sub_resource type="Curve" id=6]
 _data = [ Vector2( 0, 0.4912 ), 0.0, 0.0, 0, 0, Vector2( 0.202507, 1 ), 1.23162, 1.23162, 0, 0, Vector2( 1, 0.3416 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=7]
 offsets = PoolRealArray( 0, 0.423841, 0.907285 )
 colors = PoolColorArray( 1, 1, 1, 1, 0.87451, 0.87451, 0.87451, 1, 0.211765, 0.211765, 0.211765, 0 )
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="Animation" id=8]
+length = 1.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.654902, 0.960784, 0.980392, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=9]
 radius = 24.3708
 
 [node name="Player" type="RigidBody2D"]
-position = Vector2( 230.384, 140.07 )
-mass = 5.0
+collision_layer = 16
+collision_mask = 0
 gravity_scale = 0.0
 linear_damp = 0.5
 script = ExtResource( 1 )
 
 [node name="Spawn" type="AnimationPlayer" parent="."]
 autoplay = "Start"
-anims/Start = SubResource( 3 )
+anims/Start = SubResource( 1 )
+anims/Stop = SubResource( 2 )
 
 [node name="SpawnAnimation" type="CPUParticles2D" parent="."]
+visible = false
 emitting = false
-amount = 1
+amount = 24
 lifetime = 4.0
 speed_scale = 2.0
 explosiveness = 0.96
@@ -122,18 +242,18 @@ damping = 19.36
 angle = 120.0
 angle_random = 1.0
 scale_amount_random = 0.38
-scale_amount_curve = SubResource( 4 )
-color_ramp = SubResource( 5 )
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 4 )
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
-shape = SubResource( 6 )
-disabled = true
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Trail" type="CPUParticles2D" parent="."]
 modulate = Color( 1, 1, 1, 0.392274 )
+light_mask = 16
 amount = 45
 lifetime = 2.0
 speed_scale = 2.0
@@ -149,8 +269,8 @@ linear_accel = -21.51
 angle = 720.0
 angle_random = 1.0
 scale_amount = 0.2
-scale_amount_curve = SubResource( 1 )
-color_ramp = SubResource( 2 )
+scale_amount_curve = SubResource( 6 )
+color_ramp = SubResource( 7 )
 
 [node name="Joint" type="PinJoint2D" parent="."]
 node_a = NodePath("..")
@@ -159,22 +279,31 @@ bias = 0.114
 softness = 1.2
 
 [node name="Head" type="RigidBody2D" parent="."]
-input_pickable = true
-mass = 10.0
+modulate = Color( 1, 1, 1, 0.833333 )
+collision_layer = 8
+collision_mask = 8
+mass = 0.05
 gravity_scale = 0.0
-linear_damp = 3.0
+linear_damp = 2.0
 
 [node name="orb3" type="Sprite" parent="Head"]
+self_modulate = Color( 0.849156, 0.982859, 0.991429, 1 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 4 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/orb3"]
+autoplay = "loop"
+anims/loop = SubResource( 8 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
-shape = SubResource( 7 )
+visible = false
+shape = SubResource( 9 )
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 5 )
 texture_scale = 1.6
 color = Color( 0.282353, 1, 0.847059, 1 )
 energy = 0.45
+range_item_cull_mask = 16
 [connection signal="mouse_entered" from="Head" to="." method="_on_Head_mouse_entered"]
 [connection signal="mouse_exited" from="Head" to="." method="_on_Head_mouse_exited"]

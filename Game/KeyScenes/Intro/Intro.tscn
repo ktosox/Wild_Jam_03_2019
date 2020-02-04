@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://KeyScenes/Intro/Intro.gd" type="Script" id=1]
+[ext_resource path="res://Resources/curtain2.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 4.5 ),
+"transitions": PoolRealArray( 0.5, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -1400 ), Vector2( 0, -51.1323 ), Vector2( 0, -1400 ) ]
+}
 
 [node name="Intro" type="Node"]
 script = ExtResource( 1 )
@@ -25,3 +43,13 @@ FIN
 
 
 "
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = -1218.1
+margin_right = 1280.0
+margin_bottom = 181.9
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 1 )

@@ -1,12 +1,31 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Resources/Artwork/Portal/Space_ship_ring.png" type="Texture" id=1]
+[ext_resource path="res://GameParts/Portals/portal_new.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Open"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Gate:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 19 ]
+}
 
 [node name="SpawnPlatform" type="Node2D"]
 
-[node name="ship_bodyv2" type="Sprite" parent="."]
+[node name="Gate" type="Sprite" parent="."]
 position = Vector2( -32, -32 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 centered = false
-region_rect = Rect2( 21.7267, 17.2455, 367.56, 372.595 )
+hframes = 20
+
+[node name="Animate" type="AnimationPlayer" parent="."]
+anims/Open = SubResource( 1 )

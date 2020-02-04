@@ -11,6 +11,14 @@ var LevelSelection = "res://Source/LevelSelection/LevelSelection.tscn"
 
 var currentLevel = 0
 
+var gameLayout
+
+var playerGhost
+
+func ghost_mode_ended(reason):
+	
+	pass
+
 func _ready():
 
 	pass

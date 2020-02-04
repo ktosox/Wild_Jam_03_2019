@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GameParts/HauntableObjects/HauntArea.gd" type="Script" id=1]
+
+[node name="HauntArea" type="Area2D"]
+gravity = 0.0
+collision_layer = 0
+collision_mask = 16
+script = ExtResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_HauntArea_body_entered"]

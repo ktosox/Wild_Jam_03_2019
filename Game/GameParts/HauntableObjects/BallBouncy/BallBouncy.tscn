@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://GameParts/HauntableObjects/HauntableBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameParts/HauntableObjects/HauntArea.tscn" type="PackedScene" id=1]
 
 
 [node name="BallBouncy" type="Node2D"]

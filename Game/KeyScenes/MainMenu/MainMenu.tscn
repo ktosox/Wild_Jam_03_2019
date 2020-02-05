@@ -1,36 +1,46 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://KeyScenes/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Artwork/Interface/menu_background.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Artwork/Interface/flag_01_03.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Artwork/Interface/main_menu_back.png" type="Texture" id=4]
 [ext_resource path="res://KeyScenes/MainMenu/MenuButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://KeyScenes/MainMenu/Menu_TitleFont.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Resources/Tutorial0.png" type="Texture" id=7]
-[ext_resource path="res://Resources/Tutorial1.png" type="Texture" id=8]
-[ext_resource path="res://Resources/Tutorial2.png" type="Texture" id=9]
-
 
 [node name="MainMenu" type="Control"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -412.0
+margin_top = -12.0
+margin_right = 1.0
+margin_bottom = 17.0
 texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="MainMenuLAyout" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = 6.10352e-05
 size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ColorRect" type="TextureRect" parent="HBoxContainer"]
-margin_right = 322.0
+[node name="AudioSettings" type="TextureRect" parent="MainMenuLAyout"]
+margin_right = 320.0
 margin_bottom = 720.0
-size_flags_horizontal = 3
+rect_min_size = Vector2( 320, 0 )
 size_flags_vertical = 9
 expand = true
 stretch_mode = 1
@@ -38,7 +48,7 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="Polygon2D" type="Polygon2D" parent="HBoxContainer/ColorRect"]
+[node name="Polygon2D" type="Polygon2D" parent="MainMenuLAyout/AudioSettings"]
 position = Vector2( 7.75635, 5.54022 )
 texture = ExtResource( 3 )
 skeleton = NodePath("../Skeleton2D")
@@ -48,238 +58,248 @@ polygons = [ PoolIntArray( 3, 5, 4, 2 ), PoolIntArray( 5, 0, 1, 4 ) ]
 bones = [ NodePath("Top"), PoolRealArray( 0, 0, 0.5, 0.5, 0.5, 0.5 ), NodePath("Top/Bottom"), PoolRealArray( 0.5, 0.5, 0, 0, 0.5, 0.5 ), NodePath("Top/Bottom/Tip"), PoolRealArray( 0, 0, 0, 0, 0, 0 ) ]
 internal_vertex_count = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/ColorRect"]
+[node name="Label" type="Label" parent="MainMenuLAyout/AudioSettings"]
 margin_left = 48.0
 margin_top = 35.0
 margin_right = 295.0
 margin_bottom = 288.0
 text = "music sliders go here"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ContainerAudioSLiders" type="VBoxContainer" parent="HBoxContainer/ColorRect"]
+[node name="ContainerAudioSLiders" type="VBoxContainer" parent="MainMenuLAyout/AudioSettings"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 50.0
 margin_right = -50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MarginContainer5" type="MarginContainer" parent="HBoxContainer/ColorRect/ContainerAudioSLiders"]
-margin_right = 222.0
-margin_bottom = 237.0
+[node name="MarginContainer5" type="MarginContainer" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
+margin_right = 220.0
+margin_bottom = 201.0
 rect_min_size = Vector2( 0, 15 )
 size_flags_vertical = 3
 
-[node name="VolumeMasterSlider" type="HSlider" parent="HBoxContainer/ColorRect/ContainerAudioSLiders"]
-margin_top = 241.0
-margin_right = 222.0
-margin_bottom = 257.0
+[node name="Label" type="Label" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
+margin_top = 205.0
+margin_right = 220.0
+margin_bottom = 219.0
+text = "PLaceholder name"
+align = 1
+
+[node name="VolumeMasterSlider" type="HSlider" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
+margin_top = 223.0
+margin_right = 220.0
+margin_bottom = 239.0
 min_value = -15.0
 max_value = 15.0
-ticks_on_borders = false
 
-[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/ColorRect/ContainerAudioSLiders"]
-margin_top = 261.0
-margin_right = 222.0
-margin_bottom = 311.0
+[node name="MarginContainer2" type="MarginContainer" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
+margin_top = 243.0
+margin_right = 220.0
+margin_bottom = 293.0
 rect_min_size = Vector2( 0, 50 )
 
-[node name="VolumeMusicSlider" type="HSlider" parent="HBoxContainer/ColorRect/ContainerAudioSLiders"]
+[node name="Label2" type="Label" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
+margin_top = 297.0
+margin_right = 220.0
+margin_bottom = 311.0
+text = "PLaceholder name"
+align = 1
+
+[node name="VolumeMusicSlider" type="HSlider" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
 margin_top = 315.0
-margin_right = 222.0
+margin_right = 220.0
 margin_bottom = 331.0
 min_value = -15.0
 max_value = 15.0
 ticks_on_borders = true
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ColorRect/ContainerAudioSLiders"]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
 margin_top = 335.0
-margin_right = 222.0
+margin_right = 220.0
 margin_bottom = 385.0
 rect_min_size = Vector2( 0, 50 )
 
-[node name="VolumeAmbientSlider" type="HSlider" parent="HBoxContainer/ColorRect/ContainerAudioSLiders"]
+[node name="Label3" type="Label" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
 margin_top = 389.0
-margin_right = 222.0
-margin_bottom = 405.0
+margin_right = 220.0
+margin_bottom = 403.0
+text = "PLaceholder name"
+align = 1
+
+[node name="VolumeAmbientSlider" type="HSlider" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
+margin_top = 407.0
+margin_right = 220.0
+margin_bottom = 423.0
 min_value = -15.0
 max_value = 15.0
 ticks_on_borders = true
 
-[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer/ColorRect/ContainerAudioSLiders"]
-margin_top = 409.0
-margin_right = 222.0
-margin_bottom = 459.0
+[node name="MarginContainer3" type="MarginContainer" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
+margin_top = 427.0
+margin_right = 220.0
+margin_bottom = 477.0
 rect_min_size = Vector2( 0, 50 )
 
-[node name="VolumeEffectsSlider" type="HSlider" parent="HBoxContainer/ColorRect/ContainerAudioSLiders"]
-margin_top = 463.0
-margin_right = 222.0
-margin_bottom = 479.0
+[node name="Label4" type="Label" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
+margin_top = 481.0
+margin_right = 220.0
+margin_bottom = 495.0
+text = "PLaceholder name"
+align = 1
+
+[node name="VolumeEffectsSlider" type="HSlider" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
+margin_top = 499.0
+margin_right = 220.0
+margin_bottom = 515.0
 min_value = -15.0
 max_value = 15.0
 ticks_on_borders = true
 
-[node name="MarginContainer4" type="MarginContainer" parent="HBoxContainer/ColorRect/ContainerAudioSLiders"]
-margin_top = 483.0
-margin_right = 222.0
+[node name="MarginContainer4" type="MarginContainer" parent="MainMenuLAyout/AudioSettings/ContainerAudioSLiders"]
+margin_top = 519.0
+margin_right = 220.0
 margin_bottom = 720.0
 rect_min_size = Vector2( 0, 15 )
 size_flags_vertical = 3
 
-[node name="ColorRect2" type="TextureRect" parent="HBoxContainer"]
-margin_left = 326.0
-margin_right = 876.0
+[node name="MarginContainer" type="MarginContainer" parent="MainMenuLAyout"]
+margin_left = 324.0
+margin_right = 386.0
 margin_bottom = 720.0
-rect_min_size = Vector2( 550, 0 )
 size_flags_horizontal = 3
+
+[node name="Options+Title" type="VBoxContainer" parent="MainMenuLAyout"]
+margin_left = 390.0
+margin_right = 810.0
+margin_bottom = 720.0
+
+[node name="Options" type="NinePatchRect" parent="MainMenuLAyout/Options+Title"]
+margin_right = 420.0
+margin_bottom = 620.0
+rect_min_size = Vector2( 420, 620 )
+size_flags_vertical = 4
 texture = ExtResource( 4 )
-expand = true
+patch_margin_top = 90
+patch_margin_bottom = 150
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ColorRect2"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -180.0
-margin_top = -360.0
-margin_right = 180.0
-margin_bottom = 360.0
+[node name="ButtonContainer" type="VBoxContainer" parent="MainMenuLAyout/Options+Title/Options"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 80.0
+margin_right = -45.0
+margin_bottom = -45.0
 size_flags_horizontal = 0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
-margin_right = 360.0
-margin_bottom = 90.0
-rect_min_size = Vector2( 0, 90 )
+[node name="Title" type="ColorRect" parent="MainMenuLAyout/Options+Title/Options/ButtonContainer"]
+margin_right = 330.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Button_NewGame" parent="HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 94.0
-margin_right = 360.0
-margin_bottom = 209.0
+[node name="MarginContainer3" type="MarginContainer" parent="MainMenuLAyout/Options+Title/Options/ButtonContainer"]
+margin_top = 183.0
+margin_right = 330.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="Button_NewGame" parent="MainMenuLAyout/Options+Title/Options/ButtonContainer" instance=ExtResource( 5 )]
+margin_left = 90.0
+margin_top = 207.0
+margin_right = 240.0
+margin_bottom = 257.0
 text = "New Game"
 
-[node name="MarginContainer5" type="MarginContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 213.0
-margin_right = 360.0
-margin_bottom = 223.0
+[node name="MarginContainer5" type="MarginContainer" parent="MainMenuLAyout/Options+Title/Options/ButtonContainer"]
+margin_top = 261.0
+margin_right = 330.0
+margin_bottom = 271.0
 rect_min_size = Vector2( 0, 10 )
 
-[node name="Button_Continue" parent="HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 227.0
-margin_right = 360.0
-margin_bottom = 342.0
+[node name="Button_Continue" parent="MainMenuLAyout/Options+Title/Options/ButtonContainer" instance=ExtResource( 5 )]
+margin_left = 90.0
+margin_top = 275.0
+margin_right = 240.0
+margin_bottom = 325.0
 text = "Continue"
 
-[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 346.0
-margin_right = 360.0
-margin_bottom = 356.0
+[node name="MarginContainer2" type="MarginContainer" parent="MainMenuLAyout/Options+Title/Options/ButtonContainer"]
+margin_top = 329.0
+margin_right = 330.0
+margin_bottom = 339.0
 rect_min_size = Vector2( 0, 10 )
 
-[node name="Button_Intro" parent="HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 360.0
-margin_right = 360.0
-margin_bottom = 475.0
+[node name="Button_Intro" parent="MainMenuLAyout/Options+Title/Options/ButtonContainer" instance=ExtResource( 5 )]
+margin_left = 90.0
+margin_top = 343.0
+margin_right = 240.0
+margin_bottom = 393.0
 text = "Intro"
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 479.0
-margin_right = 360.0
-margin_bottom = 489.0
+[node name="MarginContainer" type="MarginContainer" parent="MainMenuLAyout/Options+Title/Options/ButtonContainer"]
+margin_top = 397.0
+margin_right = 330.0
+margin_bottom = 407.0
 rect_min_size = Vector2( 0, 10 )
 
-[node name="Button_Exit" parent="HBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 5 )]
-margin_top = 493.0
-margin_right = 360.0
-margin_bottom = 608.0
+[node name="Button_Exit" parent="MainMenuLAyout/Options+Title/Options/ButtonContainer" instance=ExtResource( 5 )]
+margin_left = 90.0
+margin_top = 411.0
+margin_right = 240.0
+margin_bottom = 461.0
 text = "Exit"
 
-[node name="MarginContainer4" type="MarginContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
-margin_top = 612.0
-margin_right = 360.0
-margin_bottom = 620.0
-rect_min_size = Vector2( 0, 8 )
+[node name="MarginContainer4" type="MarginContainer" parent="MainMenuLAyout/Options+Title/Options/ButtonContainer"]
+margin_top = 465.0
+margin_right = 330.0
+margin_bottom = 495.0
+rect_min_size = Vector2( 0, 30 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MainMenuLAyout"]
+margin_left = 814.0
+margin_right = 876.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+
+[node name="TutorialWindow" type="VBoxContainer" parent="MainMenuLAyout"]
 margin_left = 880.0
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_min_size = Vector2( 400, 0 )
 
-[node name="Panel" type="ColorRect" parent="HBoxContainer/VBoxContainer"]
-margin_right = 400.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 0, 150 )
-size_flags_horizontal = 9
-color = Color( 0.137255, 0, 0.698039, 1 )
-
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel"]
-modulate = Color( 0, 0.886719, 0.803589, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -198.0
-margin_top = -75.0
-margin_right = 198.0
-margin_bottom = 75.0
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 0.321569, 0.341176, 0.843137, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "Lorem Ipsum"
-align = 1
-valign = 1
-
-[node name="ColorRect3" type="ColorRect" parent="HBoxContainer/VBoxContainer"]
-editor/display_folded = true
-margin_top = 154.0
+[node name="ColorRect3" type="ColorRect" parent="MainMenuLAyout/TutorialWindow"]
 margin_right = 400.0
 margin_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color( 0.18066, 0.178299, 0.480469, 1 )
 
-[node name="Tutorial0" type="TextureRect" parent="HBoxContainer/VBoxContainer/ColorRect3"]
-modulate = Color( 0, 0.199219, 0.0964966, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = -4.0
-margin_bottom = -4.0
-texture = ExtResource( 7 )
-expand = true
-
-[node name="Tutorial1" type="TextureRect" parent="HBoxContainer/VBoxContainer/ColorRect3"]
-visible = false
-modulate = Color( 0.234375, 0, 0, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = -4.0
-margin_bottom = -4.0
-texture = ExtResource( 8 )
-expand = true
-
-[node name="Tutorial2" type="TextureRect" parent="HBoxContainer/VBoxContainer/ColorRect3"]
-visible = false
-modulate = Color( 0, 0.0281982, 0.257812, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = -4.0
-margin_bottom = -4.0
-texture = ExtResource( 9 )
-expand = true
-
-[node name="TutorialTimeout" type="Timer" parent="."]
-wait_time = 4.5
-autostart = true
-[connection signal="value_changed" from="HBoxContainer/ColorRect/ContainerAudioSLiders/VolumeMasterSlider" to="." method="_on_VolumeMasterSlider_value_changed"]
-[connection signal="value_changed" from="HBoxContainer/ColorRect/ContainerAudioSLiders/VolumeMusicSlider" to="." method="_on_VolumeMusicSlider_value_changed"]
-[connection signal="value_changed" from="HBoxContainer/ColorRect/ContainerAudioSLiders/VolumeAmbientSlider" to="." method="_on_VolumeAmbientSlider_value_changed"]
-[connection signal="value_changed" from="HBoxContainer/ColorRect/ContainerAudioSLiders/VolumeEffectsSlider" to="." method="_on_VolumeEffectsSlider_value_changed"]
-[connection signal="pressed" from="HBoxContainer/ColorRect2/VBoxContainer/Button_NewGame" to="." method="_on_Button_NewGame_pressed"]
-[connection signal="pressed" from="HBoxContainer/ColorRect2/VBoxContainer/Button_Continue" to="." method="_on_Button_Continue_pressed"]
-[connection signal="pressed" from="HBoxContainer/ColorRect2/VBoxContainer/Button_Intro" to="." method="_on_Button_Intro_pressed"]
-[connection signal="pressed" from="HBoxContainer/ColorRect2/VBoxContainer/Button_Exit" to="." method="_on_Button_Exit_pressed"]
-[connection signal="timeout" from="TutorialTimeout" to="." method="_on_TutorialTimeout_timeout"]
+[node name="Label" type="Label" parent="MainMenuLAyout/TutorialWindow/ColorRect3"]
+margin_left = 115.632
+margin_top = 204.056
+margin_right = 299.632
+margin_bottom = 271.056
+text = "tutorail screen shots go here"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="value_changed" from="MainMenuLAyout/AudioSettings/ContainerAudioSLiders/VolumeMasterSlider" to="." method="_on_VolumeMasterSlider_value_changed"]
+[connection signal="value_changed" from="MainMenuLAyout/AudioSettings/ContainerAudioSLiders/VolumeMusicSlider" to="." method="_on_VolumeMusicSlider_value_changed"]
+[connection signal="value_changed" from="MainMenuLAyout/AudioSettings/ContainerAudioSLiders/VolumeAmbientSlider" to="." method="_on_VolumeAmbientSlider_value_changed"]
+[connection signal="value_changed" from="MainMenuLAyout/AudioSettings/ContainerAudioSLiders/VolumeEffectsSlider" to="." method="_on_VolumeEffectsSlider_value_changed"]
+[connection signal="pressed" from="MainMenuLAyout/Options+Title/Options/ButtonContainer/Button_NewGame" to="." method="_on_Button_NewGame_pressed"]
+[connection signal="pressed" from="MainMenuLAyout/Options+Title/Options/ButtonContainer/Button_Continue" to="." method="_on_Button_Continue_pressed"]
+[connection signal="pressed" from="MainMenuLAyout/Options+Title/Options/ButtonContainer/Button_Intro" to="." method="_on_Button_Intro_pressed"]
+[connection signal="pressed" from="MainMenuLAyout/Options+Title/Options/ButtonContainer/Button_Exit" to="." method="_on_Button_Exit_pressed"]

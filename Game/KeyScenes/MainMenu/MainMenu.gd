@@ -1,14 +1,11 @@
 extends Control
 
 func _ready():
-	print("current level is: ", GM.Level)
-	if (GM.Level == 0):
-		$HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.modulate = Color(0.2,0.2,0.2)
-		$HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.mouse_filter = Control.MOUSE_FILTER_IGNORE
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+#	if (GM.Level == 0):
+#		$HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.modulate = Color(0.2,0.2,0.2)
+#		$HBoxContainer/ColorRect2/VBoxContainer/Button_Continue.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	pass
+
 
 
 
@@ -31,25 +28,6 @@ func _on_Button_Intro_pressed():
 func _on_Button_Continue_pressed():
 	GM.loadLevel()
 
-#this block of code tkae care of tutorail cycling - quoted for menu node re arrengment
-#func _on_TutorialTimeout_timeout():
-#	match(tutorailState):
-#		0:
-#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial0.visible = false
-#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial1.visible = true
-#			tutorailState = 1
-#			pass
-#		1:
-#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial1.visible = false
-#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial2.visible = true
-#			tutorailState = 2
-#			pass
-#		2:
-#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial2.visible = false
-#			$VBoxContainer/HBoxContainer/ColorRect3/Tutorial0.visible = true
-#			tutorailState = 0
-#			pass
-#	pass
 
 
 
